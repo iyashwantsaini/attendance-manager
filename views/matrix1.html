@@ -1,0 +1,67 @@
+
+	<!DOCTYPE HTML>
+	<html> 
+		<head>
+			<title>Attendance PORTAL</title>
+			<!-- semantic cdn -->
+			<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="semantic/dist/semantic.min.js"></script>
+			<script type="text/javascript">  import { timer} from './models/timer.js';</script> 
+
+			<!-- matrix -->
+			 <script type="text/javascript">  
+					 var t = function() {  
+					  var table = document.getElementById("demo"); 
+				  for( var i = 0; i < 10; i++ ){ 
+						var row = document.createElement("tr"); 
+				  for( var j = 0; j < 10; j++ ){  
+
+							  var col = document.createElement("td");  
+						  col.innerHTML = (i*10)+j + 1; // assigning value to the cell
+						row.appendChild(col);  
+						 }  
+						 table.appendChild(row);
+						}
+					 }; 
+					 window.onload=t;
+			
+					 </script>  
+		
+					  
+		</head>
+		<body>
+			<table id="demo" ></table>
+			<script>var n=1;
+			function timer(){
+			var date=new Date();
+			console.log(date);
+
+			var seconds=date.getSeconds();
+				console.log(seconds);
+	 		var t=setInterval(function(){
+			var newDate=new Date().getSeconds();
+			if(newDate-seconds>5){
+			clearInterval(t);
+			document.getElementById("demo").innerHTML="";
+			
+				clearInterval(t);
+
+		}
+		console.log(newDate);
+		n++;
+
+	}
+	,1000);
+
+	};
+	timer();
+	</script>
+
+	<a href="temp2.html">DONE</a>
+
+
+
+
+		</body>     
+	</html>
