@@ -12,19 +12,26 @@
     <style>
         header,
         main,
-        footer {
-            padding-left: 300px;
+        footer,.container {
+            padding-left:0px;
         }
+      .tabcontent{
+            display:none;
+          }
 
-        @media only screen and (max-width : 992px) {
+        @media only screen and (min-width : 992px) {
 
             header,
             main,
-            footer {
-                padding-left: 0;
+            footer,.container {
+                padding-left: 350px;
             }
+          .tabcontent{
+            padding-left: 350px;
+          }
         }
     </style>
+
 </head>
 
 <body>
@@ -49,9 +56,9 @@
         <div class="divider"></div>
 
         <li><a class="waves-effect tablinks" onclick="openCity(event, 'addTeacher')">ADD TEACHER</a></li>
-        <li><a class="waves-effect" href="#!">ADD STUDENT</a></li>
+        <li><a class="waves-effect tablinks" onclick="openCity(event, 'addStudent')">ADD STUDENT</a></li>
         <div class="divider"></div>
-        
+
         <li><a class="subheader">VIEW</a></li>
         <li><a class="waves-effect" href="#!">TEACHERS</a></li>
         <li><a class="waves-effect" href="#!">STUDENTS</a></li>
@@ -59,45 +66,48 @@
 
     <!-- Tab content -->
     <div id="addTeacher" class="tabcontent">
-      <h3>Add Teacher</h3>
+        <h3>Add Teacher</h3>
     </div>
     <div id="addStudent" class="tabcontent">
-      <h3>Add Student</h3>
+        <h3>Add Student</h3>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         var instances;
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
-             instances = M.Sidenav.init(elems, {});
+            instances = M.Sidenav.init(elems, {});
 
         });
-       
+
     </script>
-  
+
     <script>
-      function openCity(evt, cityName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
 
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
 
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
     </script>
-            
+
+
+
+
 </body>
 
 </html>
