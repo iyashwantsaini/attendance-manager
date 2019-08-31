@@ -10,7 +10,8 @@ var studentfirst=document.getElementById("student_first_name");
 var studentlast=document.getElementById("student_last_name");
 var studentroll=document.getElementById("student_roll_no");
 var studentyear = document.getElementById("year");
-var studentbranch=document.getElementById("branch")
+var studentbranch=document.getElementById("branch");
+var studentbatch=document.getElementById("student_batch");
 
 teachadd.addEventListener('click',(e) => {
     e.preventDefault();
@@ -34,14 +35,15 @@ studadd.addEventListener('click',(e) => {
     var first = studentfirst.value;
     var last = studentlast.value;
     var roll = studentroll.value;
+    var batch = studentbatch.value;
     
       var database = firebase.database();
       firebase.database().ref('users/students/'+roll).set({
-      year:year,
-      branch:branch,
       first:first,
       last:last,
+      year:year,
+      branch:branch,
+      batch:batch
       });
-  
 });
 
