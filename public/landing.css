@@ -1,0 +1,13 @@
+.container {
+    display: flexbox;
+    text-align: center;
+    margin-top: 10em;
+  box-shadow: 0 0 0  
+}
+
+.container a {
+    justify-content: center;
+    margin: 3em;
+    align-self: center;
+    align-items: baseline;
+}
