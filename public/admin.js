@@ -9,20 +9,20 @@ var teachcode=document.getElementById("teacher_email");
 var studentfirst=document.getElementById("student_first_name");
 var studentlast=document.getElementById("student_last_name");
 var studentroll=document.getElementById("student_roll_no");
-
-studadd.addEventListener('click',function(){
-  console.log("hello");
-});
+var studentyear = document.getElementById("year");
+var studentbranch=document.getElementById("branch")
 
 teachadd.addEventListener('click',(e) => {
-    // var e = document.getElementById("year");
-    // var strUser = e.options[e.selectedIndex].value;
     // console.log(strUser);
     console.log("hello");
-    console.log(teachfirst.value);
   });
-var x = document.getElementById("teachadd");
-x.addEventListener("click", (e) => {
-  console.log("working !!");
+
+studadd.addEventListener('click',(e) => {
+    e.preventDefault();
+    var year = studentyear.options[studentyear.selectedIndex].value;
+    var branch = studentbranch.options[studentbranch.selectedIndex].value;
+    var first = studentfirst.value;
+    var last = studentlast.value;
+  
 });
 
