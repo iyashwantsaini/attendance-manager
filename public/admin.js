@@ -18,10 +18,9 @@ teachadd.addEventListener('click',(e) => {
     var first = teachfirst.value;
     var last = teachlast.value;
     var email = teachmail.value;
-    
+  
       var database = firebase.database();
       firebase.database().ref('users/teachers/'+code).set({
-      code:code,
       email:email,
       first:first,
       last:last,

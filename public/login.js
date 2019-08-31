@@ -56,6 +56,12 @@ teachloginsub.addEventListener('click', (e) => {
   });
 });
 
+firebase.auth().onAuthStateChanged(user => {
+  if(user) {
+    console.log(user);
+  }
+});
+
 adminloginsub.addEventListener('click', (e) => {
   e.preventDefault();
   var email=adminmail.value+"@admin.com";
