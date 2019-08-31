@@ -19,7 +19,9 @@ app.get('/admin', function(request, response) {
 app.get('/studentPortal', function(request, response) {
   response.sendFile(__dirname + '/views/studentPortal.html');
 });
-
+app.get('/t', function(request, response) {
+  response.sendFile(__dirname + '/views/matrix1.html');
+});
 app.get('/teacherPortal', function(request, response) {
   response.sendFile(__dirname + '/views/teacherPortal.html');
 });
