@@ -32,11 +32,12 @@ studloginsub.addEventListener('click', (e) => {
   console.log(errorMessage);
   });
   
-firebase.auth().onAuthStateChanged(user => {
+  firebase.auth().onAuthStateChanged(user => {
       if (user) {
-          window.location = 'https://www.google.com';
+          window.location = '/studentPortal';
       }
-});
+  });
+});  
 
 teachloginsub.addEventListener('click', (e) => {
   e.preventDefault();
@@ -57,6 +58,11 @@ teachloginsub.addEventListener('click', (e) => {
   var errorCode = error.code;
   var errorMessage = error.message;
   console.log(errorMessage);
+  });
+  firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+          window.location = '/teacherPortal';
+      }
   });
 });
 
@@ -80,7 +86,11 @@ adminloginsub.addEventListener('click', (e) => {
   var errorMessage = error.message;
   console.log(errorMessage);
   });
-  
+  firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+          window.location = '/studentPortal';
+      }
+  });
 });
 
   
@@ -143,15 +153,13 @@ adminloginsub.addEventListener('click', (e) => {
   // console.log("error_!!");
   // });
   
-//   var console=document.getElementById("console_database");
+  var console=document.getElementById("console_database");
 
-//   console.addEventListener('click',function(){
-//     var ref = firebase.database().ref();
+  console.addEventListener('click',function(){
 
-//   ref.on("value", function(snapshot) {
-//      console.log(snapshot.val());
-//   }, function (error) {
-//      console.log("Error: " + error.code);
-//   });
+    var userId = firebase.auth().currentUser.uid;
+    return firebase.database().ref('/users/').once('value').then(function(snapshot) {
+      console.log(snapshot.val());
+    });
     
-//   });
+  });

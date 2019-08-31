@@ -24,9 +24,9 @@
         .container {
             padding-left: 0px;
         }
-        .tabcontent {
-            display: none;
-        }
+        /* .tabcontent {
+            
+        } */
       
       
         .custom-inp {
@@ -156,7 +156,7 @@
               <div class="card">
                 <div class="card blue-grey darken-1">
                        
-                  <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"onclick="openCity(event, 'addStudent')" href="#modal2"><i class="material-icons">add</i></a>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal2"><i class="material-icons">add</i></a>
                   <div class="card-content white-text">
                         <span class="card-title">ADD STUDENT</span>
                 
@@ -167,7 +167,6 @@
           </div>
           <div id="modal2" class="modal">
                 <div class="modal-content">
-                  
                         <div id="addStudent" class="tabcontent">
                                 <h3>Add Student</h3>
                                 <div class="row">
@@ -212,7 +211,7 @@
                                             <label>Year</label>
                                         </div>
                                         <div class="row">
-                        <!--                     <div class="input-field col s6">
+                                     <!--                     <div class="input-field col s6">
                                                 <label class="waves-effect waves-light btn z-depth-5 custom-inp">
                                                     <input type="file" id="student_file" />
                                                     Choose csv/excel file
@@ -233,9 +232,9 @@
                 </div>
                
               </div>
-    <!-- Tab content -->
+  
     
-    <div id="addStudent" class="tabcontent">
+    <!-- <div id="addStudent" class="tabcontent">
         <h3>Add Student</h3>
         <div class="row">
             <form class="col s12">
@@ -279,12 +278,12 @@
                     <label>Year</label>
                 </div>
                 <div class="row">
-<!--                     <div class="input-field col s6">
+                  <div class="input-field col s6">
                         <label class="waves-effect waves-light btn z-depth-5 custom-inp">
                             <input type="file" id="student_file" />
                             Choose csv/excel file
                         </label>
-                    </div> -->
+                    </div> 
                     <div class="row">
                             <div class="input-field col s12" >
                                     <button id="studadd" type="submit" class="waves-effect waves-light btn z-depth-5 right"><i class="material-icons">add</i>Add</button>
@@ -295,7 +294,7 @@
                 
             </form>
         </div>
-    </div>
+    </div> -->
     <div id="viewStudent" class="tabcontent">
         <h3>View Student</h3>
     </div>
@@ -314,26 +313,26 @@
 
     <!--  Tabs script  -->
     <script>
-        function openCity(evt, cityName) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
+        // function openCity(evt, cityName) {
+        //     // Declare all variables
+        //     var i, tabcontent, tablinks;
 
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
+        //     // Get all elements with class="tabcontent" and hide them
+        //     tabcontent = document.getElementsByClassName("tabcontent");
+        //     for (i = 0; i < tabcontent.length; i++) {
+        //         //tabcontent[i].style.display = "none";
+        //     }
 
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
+        //     // Get all elements with class="tablinks" and remove the class "active"
+        //     tablinks = document.getElementsByClassName("tablinks");
+        //     for (i = 0; i < tablinks.length; i++) {
+        //         tablinks[i].className = tablinks[i].className.replace(" active", "");
+        //     }
 
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
+        //     // Show the current tab, and add an "active" class to the button that opened the tab
+        //     document.getElementById(cityName).style.display = "block";
+        //     evt.currentTarget.className += " active";
+        // }
     </script>
   
     <!--  Dropdown Script  -->
