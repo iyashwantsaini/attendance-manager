@@ -7,6 +7,7 @@
 			<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="semantic/dist/semantic.min.js"></script>
+	<script src="../public"></script>
 			<script type="text/javascript">  import { timer} from './models/timer.js';</script> 
 
 			<!-- matrix -->
@@ -58,32 +59,7 @@ th {
       <center>
 			<table id="demo"></table>
       
-			<script>var n=1;
-			function timer(){
-			var date=new Date();
-			console.log(date);
-
-			var seconds=date.getSeconds();
-				console.log(seconds);
-	 		var t=setInterval(function(){
-			var newDate=new Date().getSeconds();
-			if(newDate-seconds>5){
-			clearInterval(t);
-			document.getElementById("demo").innerHTML="";
 			
-				clearInterval(t);
-
-		}
-		console.log(newDate);
-		n++;
-
-	}
-	,1000);
-
-	};
-	timer();
-	export default 
-	</script>
 <a href="/t2">DONE</a>
       <h4>
         Only thoose request will be accepted thoose who have entered wrong entries.
