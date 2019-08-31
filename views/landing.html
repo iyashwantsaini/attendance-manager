@@ -132,10 +132,21 @@
     messagingSenderId: "1035758949707",
     appId: "1:1035758949707:web:4779f27dd6c1a12e"
   };
+  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
   var database = firebase.database();
+  var name="yash";
+  var email="yash@yash.com";
+  var userId="tyevcwt566";
+  function writeUserData(userId, name, email , imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    // profile_picture : imageUrl
+  });
+  }
 </script>
 
 <script src="./login.js"></script>
