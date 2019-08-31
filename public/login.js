@@ -88,7 +88,7 @@ adminloginsub.addEventListener('click', (e) => {
   });
   firebase.auth().onAuthStateChanged(user => {
       if (user) {
-          window.location = '/studentPortal';
+          window.location = '/admin';
       }
   });
 });
@@ -153,13 +153,14 @@ adminloginsub.addEventListener('click', (e) => {
   // console.log("error_!!");
   // });
   
-  var console=document.getElementById("console_database");
 
-  console.addEventListener('click',function(){
-
-    var userId = firebase.auth().currentUser.uid;
-    return firebase.database().ref('/users/').once('value').then(function(snapshot) {
-      console.log(snapshot.val());
+  var database=document.getElementById("console_database");
+  database.addEventListener('click',(e) => {
+  console.log("clicked");
+  var ref=firebase.database().ref('/users/');
+    ref.on('value',function(snapshot) {
+      var datajson=snapshot.val();
+      console.log(datajson);
     });
     
   });

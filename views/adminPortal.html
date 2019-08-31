@@ -45,9 +45,7 @@
             .container {
                 padding-left: 350px;
             }
-            .tabcontent {
-                padding-left: 350px;
-            }
+            
         }
     
 
@@ -60,31 +58,7 @@
         <a> <i style="padding:10px;" class="material-icons right">logout</i></a>
     </nav>
 
-    <!-- <ul id="slide-out" class="sidenav sidenav-fixed">
-        <li>
-            <div class="user-view">
-
-                <div class="background">
-                    <img
-                        src="https://cdn11.bigcommerce.com/s-hfhomm5/images/stencil/1280x1280/products/180/451/Solid_Red_Sized__25214.1507754519.jpg?c=2&imbypass=on">
-                </div>
-                <a href="#user"> <img class="circle" src="https://i.ytimg.com/vi/OBbO3qejzzw/hqdefault.jpg"
-                        alt="missing"> </a>
-                <a href="#name"><span class="white-text name">ADMIN</span></a>
-                <a href="#email"><span class="white-text email">ADMIN@thapar.edu</span></a>
-            </div>
-        </li>
-        <li><a class="subheader">ADD</a></li>
-        <div class="divider"></div>
-
-        <li><a class="waves-effect tablinks" onclick="openCity(event, 'addTeacher')">ADD TEACHER</a></li>
-        <li><a class="waves-effect tablinks" onclick="openCity(event, 'addStudent')">ADD STUDENT</a></li>
-        <div class="divider"></div>
-
-        <li><a class="subheader">VIEW</a></li>
-        <li><a class="waves-effect tablinks" onclick="openCity(event, 'viewTeacher')">TEACHERS</a></li>
-        <li><a class="waves-effect tablinks" onclick="openCity(event, 'viewStudent')">STUDENTS</a></li>
-    </ul> -->
+    
     <!-- card1-->
     <h4 class="subheader center-align">ADD</h4>
     <div class="divider"></div>
@@ -93,7 +67,7 @@
               <div class="card">
                 <div class="card blue-grey darken-1">
                        
-                  <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"onclick="openCity(event, 'addTeacher')" href="#modal1"><i class="material-icons">add</i></a>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
                   <div class="card-content white-text">
                         <span class="card-title">ADD TEACHER</span>
                 <p></p>
@@ -150,6 +124,7 @@
                             </div>
                         </div>
           </div>
+        </div>
     <!-- modal1 end -->
     <div class="row">
             <div class="col s12 m6">
@@ -165,9 +140,10 @@
               </div>
             </div>
           </div>
+          
           <div id="modal2" class="modal">
                 <div class="modal-content">
-                        <div id="addStudent" class="tabcontent">
+                        <div id="addStudent" >
                                 <h3>Add Student</h3>
                                 <div class="row">
                                     <form class="col s12">
@@ -302,38 +278,10 @@
         <h3>View Teacher</h3>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        var instances;
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            instances = M.Sidenav.init(elems, {});
-
-        });
-    </script>
+  
 
     <!--  Tabs script  -->
-    <script>
-        // function openCity(evt, cityName) {
-        //     // Declare all variables
-        //     var i, tabcontent, tablinks;
-
-        //     // Get all elements with class="tabcontent" and hide them
-        //     tabcontent = document.getElementsByClassName("tabcontent");
-        //     for (i = 0; i < tabcontent.length; i++) {
-        //         //tabcontent[i].style.display = "none";
-        //     }
-
-        //     // Get all elements with class="tablinks" and remove the class "active"
-        //     tablinks = document.getElementsByClassName("tablinks");
-        //     for (i = 0; i < tablinks.length; i++) {
-        //         tablinks[i].className = tablinks[i].className.replace(" active", "");
-        //     }
-
-        //     // Show the current tab, and add an "active" class to the button that opened the tab
-        //     document.getElementById(cityName).style.display = "block";
-        //     evt.currentTarget.className += " active";
-        // }
-    </script>
+ 
   
     <!--  Dropdown Script  -->
   <script>
