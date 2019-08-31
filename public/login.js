@@ -39,19 +39,18 @@ studloginsub.addEventListener('click', (e) => {
   } else {
     console.log("not found eror!");
     // User is signed out.
-    // ...
   }
   });
 });
 
-studlogoutsub.addEventListener('click', (e) => {
-  e.preventDefault();
+// studlogoutsub.addEventListener('click', (e) => {
+//   e.preventDefault();
   
-  var auth=firebase.auth();
-  auth.signOut().then(function() {
-  // Sign-out successful.
-  }, function(error) {
-  // An error happened.
-  });
+//   var auth=firebase.auth();
+//   auth.signOut().then(function() {
+//   // Sign-out successful.
+//   }, function(error) {
+//   // An error happened.
+//   });
 
-});
+// });
