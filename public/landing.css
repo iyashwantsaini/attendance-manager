@@ -1,6 +1,7 @@
 body{
-  background: linear-gradient(to right, #00B4DB, #0083B0);
+background-image: url("http://www.icfsthapar.in/assets/img/banner3a-new.jpg");
 }
+
 .container {
     display: flexbox;
     text-align: center;
