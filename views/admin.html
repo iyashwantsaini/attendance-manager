@@ -48,17 +48,21 @@
         <li><a class="subheader">ADD</a></li>
         <div class="divider"></div>
 
-        <li><a class="waves-effect" href="#!">ADD TEACHER</a></li>
+        <li><a class="waves-effect tablinks" onclick="openCity(event, 'addTeacher')">ADD TEACHER</a></li>
         <li><a class="waves-effect" href="#!">ADD STUDENT</a></li>
         <div class="divider"></div>
-        </li>
+        
         <li><a class="subheader">VIEW</a></li>
         <li><a class="waves-effect" href="#!">TEACHERS</a></li>
         <li><a class="waves-effect" href="#!">STUDENTS</a></li>
     </ul>
 
-    <div class="container" id="addTeacher">
-
+    <!-- Tab content -->
+    <div id="addTeacher" class="tabcontent">
+      <h3>Add Teacher</h3>
+    </div>
+    <div id="addStudent" class="tabcontent">
+      <h3>Add Student</h3>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
@@ -71,26 +75,28 @@
        
     </script>
   
-  
-  
-     <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">Links</a>
-            </div>
-          </div>
-        </footer>
+    <script>
+      function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+    </script>
             
 </body>
 
