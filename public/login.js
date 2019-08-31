@@ -1,9 +1,9 @@
-var studmail=document.getElementById("#studmail");
-var teachmail=document.getElementById("#teachmail");
-var adminmail=document.getElementById("#adminmail");
-var studpass=document.getElementById("#studpass");
-var teachpass=document.getElementById("#teachpass");
-var adminpass=document.getElementById("#adminpass");
+var studmail=document.getElementById("studmail");
+var teachmail=document.getElementById("teachmail");
+var adminmail=document.getElementById("adminmail");
+var studpass=document.getElementById("studpass");
+var teachpass=document.getElementById("teachpass");
+var adminpass=document.getElementById("adminpass");
 
 var studloginsub=document.getElementById("studsubmit");
 var teachloginsub=document.getElementById("teachsubmit");
@@ -16,7 +16,8 @@ studloginsub.addEventListener('click', (e) => {
   var auth=firebase.auth();
   
   auth.signInWithEmailAndPassword(email,pass).then(cred => {
-    console.log(cred.user);
+    // console.log(cred.user);
+    // export cred
   }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
