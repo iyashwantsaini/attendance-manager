@@ -11,6 +11,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .container p {
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,6 +45,14 @@
         <li>Hi, {Username} !</li>
         <li><a href="#">Logout</a></li>
     </ul>
+
+    <div class="container">
+        <p>
+            <h4><strong>YEAR:</strong> 2 &nbsp;&nbsp;&nbsp;<strong>Batch:</strong> COE17</h4>
+            <div class="markUpdated">
+            </div>
+        </p>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
