@@ -41,11 +41,12 @@ studloginsub.addEventListener('click', (e) => {
     // User is signed out.
     // ...
   }
-});
+  });
 });
 
-studlogoutsub.addEventListener('click',(e) => {
+studlogoutsub.addEventListener('click', (e) => {
   e.preventDefault();
+  
   var auth=firebase.auth();
   auth.signOut().then(function() {
   // Sign-out successful.
