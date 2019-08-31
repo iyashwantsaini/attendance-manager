@@ -9,7 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
+    <style>
+        header,
+        main,
+        footer {
+            padding-left: 300px;
+        }
+        .sidenav-trigger{
+          display:none;
+          background:red;
+        }
+        @media only screen and (max-width : 992px) {
 
+            header,
+            main,
+            footer {
+                padding-left: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -30,20 +48,27 @@
                 <a href="#email"><span class="white-text email">ADMIN@thapar.edu</span></a>
             </div>
         </li>
+        <li><a class="subheader">ADD</a></li>
         <div class="divider"></div>
-        <li><a class="waves-effect"href="#!">ADD TEACHER</a></li>
+
+        <li><a class="waves-effect" href="#!">ADD TEACHER</a></li>
         <li><a class="waves-effect" href="#!">ADD STUDENT</a></li>
         <li>
             <div class="divider"></div>
         </li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><a class="subheader">VIEW</a></li>
+        <li><a class="waves-effect" href="#!">TEACHERS</a></li>
+        <li><a class="waves-effect" href="#!">STUDENTS</a></li>
     </ul>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems, {});
+
+        });
+        document.querySelector('.sidenav-trigger').on('click',function(){
+            
         });
     </script>
 </body>
