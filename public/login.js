@@ -36,7 +36,6 @@ studloginsub.addEventListener('click', (e) => {
   var errorMessage = error.message;
   console.log(errorMessage);
   });
-  
 });
 //   auth.onAuthStateChanged(function(user) {
 //   if (user) {
