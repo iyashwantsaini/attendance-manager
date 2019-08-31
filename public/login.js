@@ -32,10 +32,10 @@ studloginsub.addEventListener('click', (e) => {
   console.log(errorMessage);
   });
   
-  firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            window.location = 'https://www.google.com';
-        }
+firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+          window.location = 'https://www.google.com';
+      }
 });
 
 teachloginsub.addEventListener('click', (e) => {
@@ -60,12 +60,6 @@ teachloginsub.addEventListener('click', (e) => {
   });
 });
 
-firebase.auth().onAuthStateChanged(user => {
-  if(user) {
-    console.log(user);
-  }
-});
-
 adminloginsub.addEventListener('click', (e) => {
   e.preventDefault();
   var email=adminmail.value+"@admin.com";
@@ -86,8 +80,10 @@ adminloginsub.addEventListener('click', (e) => {
   var errorMessage = error.message;
   console.log(errorMessage);
   });
+  
 });
 
+  
 //   auth.onAuthStateChanged(function(user) {
 //   if (user) {
 //     console.log("user logged in!");
@@ -147,14 +143,15 @@ adminloginsub.addEventListener('click', (e) => {
   // console.log("error_!!");
   // });
   
-  var console=document.getElementById("console_database");
-  
-  console.addEventListener('click',function(){
-    var ref = firebase.database().ref();
+//   var console=document.getElementById("console_database");
 
-  ref.on("value", function(snapshot) {
-     console.log(snapshot.val());
-  }, function (error) {
-     console.log("Error: " + error.code);
-  });
-    });
+//   console.addEventListener('click',function(){
+//     var ref = firebase.database().ref();
+
+//   ref.on("value", function(snapshot) {
+//      console.log(snapshot.val());
+//   }, function (error) {
+//      console.log("Error: " + error.code);
+//   });
+    
+//   });
