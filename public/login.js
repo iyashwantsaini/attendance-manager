@@ -36,7 +36,8 @@ studloginsub.addEventListener('click', (e) => {
 
 teachloginsub.addEventListener('click', (e) => {
   e.preventDefault();
-  var email=studmail.value;
+  
+  var email=studmail.value +"@teacher.com";
   var pass=studpass.value;
   var auth=firebase.auth();
   
@@ -54,13 +55,12 @@ teachloginsub.addEventListener('click', (e) => {
   var errorMessage = error.message;
   console.log(errorMessage);
   });
-
 });
 
 adminloginsub.addEventListener('click', (e) => {
   e.preventDefault();
-  var email=studmail.value;
-  var pass=studpass.value;
+  var email=teachmail.value;
+  var pass=teachpass.value;
   var auth=firebase.auth();
   
   auth.signInWithEmailAndPassword(email,pass).then(function(){
