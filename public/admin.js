@@ -3,8 +3,8 @@ var studadd=document.getElementById("studadd");
 
 var teachfirst=document.getElementById("teacher_first_name");
 var teachlast=document.getElementById("teacher_last_name");
-var teachmail=document.getElementById("teacher_code");
-var teachcode=document.getElementById("teacher_email");
+var teachmail=document.getElementById("teacher_email");
+var teachcode=document.getElementById("teacher_code");
 
 var studentfirst=document.getElementById("student_first_name");
 var studentlast=document.getElementById("student_last_name");
@@ -13,8 +13,19 @@ var studentyear = document.getElementById("year");
 var studentbranch=document.getElementById("branch")
 
 teachadd.addEventListener('click',(e) => {
-    // console.log(strUser);
-    console.log("hello");
+    e.preventDefault();
+    var code = teachcode.value;
+    var first = teachfirst.value;
+    var last = teachlast.value;
+    var email = teachmail.value;
+    
+      var database = firebase.database();
+      firebase.database().ref('users/teachers/'+code).set({
+      code:code,
+      email:email,
+      first:first,
+      last:last,
+      });
   });
 
 studadd.addEventListener('click',(e) => {
