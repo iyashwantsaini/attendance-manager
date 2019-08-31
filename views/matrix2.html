@@ -10,7 +10,17 @@
 			<script type="text/javascript">  import { timer} from './models/timer.js';</script> 
 
 			<!-- matrix -->
-			 <script type="text/javascript">  
+			 <script type="text/javascript"> 
+         var arr1 = new Array(10);
+         for (var i = 0; i < arr1.length; i++) { 
+    arr1[i] = new Array(10); 
+}
+         var h = 0; 
+  
+// Loop to initilize 2D array elements. 
+      
+         
+         
 					 var t = function() {  
 					  var table = document.getElementById("demo"); 
 				  for( var i = 0; i < 10; i++ ){ 
@@ -18,7 +28,9 @@
 				  for( var j = 0; j < 10; j++ ){  
 
 							  var col = document.createElement("td");  
+            arr1[i][j] = h++; 
 						  col.innerHTML = (i*10)+j + 1; // assigning value to the cell
+            col.style.fontSize="50px";
 						row.appendChild(col);  
 						 }  
 						 table.appendChild(row);
