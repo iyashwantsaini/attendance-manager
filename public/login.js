@@ -9,35 +9,38 @@ var studloginsub=document.getElementById("studsubmit");
 var teachloginsub=document.getElementById("teachsubmit");
 var adminloginsub=document.getElementById("adminsubmit");
 
+var user=null;
+
 studloginsub.addEventListener('click', (e) => {
   e.preventDefault();
   var email=studmail.value;
   var pass=studpass.value;
   var auth=firebase.auth();
   
+  auth.signInWithEmailAndPassword(email,pass).then(function(){
+  user = firebase.auth().currentUser;
+  if(user!=null){
+    console.log("logged_in_success");
+  }else{
   auth.createUserWithEmailAndPassword(email, pass).catch(function(error) {
-  // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  // ...
+  console.log("error_!!");
   }).then(function (){
-       var database = firebase.database();
+  var database = firebase.database();
   var name="yash";
   var email="yash@yash.com";
   firebase.database().ref('users').push({
     username: name,
     email: email });
   });
-  auth.signInWithEmailAndPassword(email,pass).then(cred => {
-    // console.log(cred.user);
-    // export cred
+  }
   }).catch(function(error) {
-  // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  // ...
   console.log(errorMessage);
   });
+  
   
   auth.onAuthStateChanged(function(user) {
   if (user) {
