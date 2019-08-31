@@ -10,25 +10,36 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
     <style>
+        input[type="file"] {
+            display: none;
+        }
+
         header,
         main,
-        footer,.container {
-            padding-left:0px;
+        footer,
+        .container {
+            padding-left: 0px;
         }
-      .tabcontent{
-            display:none;
-          }
+
+        .tabcontent {
+            display: none;
+        }
 
         @media only screen and (min-width : 992px) {
 
             header,
             main,
-            footer,.container {
+            footer,
+            .container {
                 padding-left: 350px;
             }
-          .tabcontent{
-            padding-left: 350px;
-          }
+
+            .tabcontent {
+                padding-left: 350px;
+            }
+        }
+        .custom-inp{
+            color:#fff;
         }
     </style>
 
@@ -67,82 +78,87 @@
     <!-- Tab content -->
     <div id="addTeacher" class="tabcontent">
         <h4 class="center">ADD A TEACHER</h4>
-            <div class="row">
-                    <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s6">
-                          <input placeholder="First Name" id="first_name" type="text" class="validate">
-                          <label for="first_name">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                          <input id="last_name" type="text" class="validate">
-                          <label for="last_name">Last Name</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <input  id="teacherCode" type="text">
-                          <label for="teacherCode">Teacher's Code</label>
-                        </div>
-                      </div>
-                     
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <input id="email" type="email" class="validate">
-                          <label for="email">Email</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                            <div class="input-field col s6">
-                              <input  type="file">
-                              <label for="first_name">Upload File</label>
-                            </div>
-                      </div>
-                  
-                    </form>
-              </div>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="First Name" id="teacher_first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="teacher_last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="teacher_code" type="text">
+                        <label for="teacherCode">Teacher's Code</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="teacher_email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label class="waves-effect waves-light btn-large z-depth-5 custom-inp">
+                            <input type="file" id="teacher_file"/>
+                            Choose csv/excel file
+                        </label>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
     <div id="addStudent" class="tabcontent">
         <h3>Add Student</h3>
         <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <input placeholder="First Name" id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="First Name" id="student_first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="student_last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="student_rollno" type="text">
+                        <label for="teacherCode">Roll No</label>
+                    </div>
+                </div>
+
+                <div class="input-field col s12">
+                  <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <label>Materialize Select</label>
               </div>
-              <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input  id="teacherCode" type="text">
-                <label for="teacherCode">Teacher's Code</label>
-              </div>
-            </div>
-           
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-              </div>
-            </div>
-            <div class="row">
-                  <div class="input-field col s6">
-                    <input  type="file">
-                    <label for="first_name">Upload File</label>
-                  </div>
-            </div>
-        
-          </form>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="file">
+                        <label for="first_name">Upload File</label>
+                    </div>
+                </div>
+
+            </form>
         </div>
     </div>
-  <div id="viewStudent" class="tabcontent">
+    <div id="viewStudent" class="tabcontent">
         <h3>View Student</h3>
     </div>
-  <div id="viewTeacher" class="tabcontent">
+    <div id="viewTeacher" class="tabcontent">
         <h3>View Teacher</h3>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -153,35 +169,29 @@
             instances = M.Sidenav.init(elems, {});
 
         });
-
     </script>
 
     <script>
-      function openCity(evt, cityName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
 
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
 
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-    </script>s
-
-
-
-
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
-
 </html>

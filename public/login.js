@@ -9,7 +9,8 @@ var studloginsub=document.getElementById("studsubmit");
 var teachloginsub=document.getElementById("teachsubmit");
 var adminloginsub=document.getElementById("adminsubmit");
 
-studloginsub.addEventListener('click', function(){
+studloginsub.addEventListener('click', (e) => {
+  e.preventDefault();
   var email=studmail.value;
   var pass=studpass.value;
   var auth=firebase.auth();
@@ -20,6 +21,9 @@ studloginsub.addEventListener('click', function(){
   var errorMessage = error.message;
   // ...
   console.log(errorMessage);
+  })
+  .then(cred => {
+    console.log(cred.user);
   });
   
   auth.onAuthStateChanged(function(user) {
