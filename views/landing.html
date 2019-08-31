@@ -14,6 +14,30 @@
     <link rel="stylesheet" href="./landing.css">
     <title>HomePage</title>
 
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.5.0/firebase.js"></script>
+  
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBBgyIY1ru34Ij6KO_-RVTICcEsTzJ8yuU",
+    authDomain: "attenman.firebaseapp.com",
+    databaseURL: "https://attenman.firebaseio.com",
+    projectId: "attenman",
+    storageBucket: "",
+    messagingSenderId: "1035758949707",
+    appId: "1:1035758949707:web:4779f27dd6c1a12e"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 
 </head>
 
@@ -37,12 +61,12 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="studUn" type="text" class="validate">
+                                <input id="studmail" type="text" class="validate">
                                 <label for="icon_prefix">Roll No.</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">lock</i>
-                                <input id="studPass" type="password" class="validate">
+                                <input id="studpass" type="password" class="validate">
                                 <label for="icon_telephone">Password</label>
                             </div>
                         </div>
@@ -67,12 +91,12 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="teachUn" type="text" class="validate">
+                                <input id="teachmail" type="text" class="validate">
                                 <label for="icon_prefix">Username</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">lock</i>
-                                <input id="teachPass" type="password" class="validate">
+                                <input id="teachpass" type="password" class="validate">
                                 <label for="icon_telephone">Password</label>
                             </div>
                         </div>
@@ -95,12 +119,12 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="adminUn" type="text" class="validate">
+                                <input id="adminmail" type="text" class="validate">
                                 <label for="icon_prefix">Username</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">lock</i>
-                                <input id="adminPass" type="password" class="validate">
+                                <input id="adminpass" type="password" class="validate">
                                 <label for="icon_telephone">Password</label>
                             </div>
                         </div>
@@ -121,6 +145,16 @@
             var instances = M.Modal.init(elems, {});
         });
     </script>
+
+    
+    <script>
+      
+      var studlogin=function(){
+        var studmail=document.querySelector("#studmail");
+      }
+    </script>      
+
+      
 </body>
 
 </html>
