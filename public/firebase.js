@@ -16,13 +16,16 @@
   
   // get elelments
   const preObject = document.getElementById('object');
-
+  const ulList = document.getElemnetById('list');
+  
   const dbRefObject = firebase.database().ref().child('object');
+  const dbRefList = firebase.dbRefObject.child('hobbies');
   
   
   dbRefObject.on('value',snap=>{
     preObject.innerText = JSON.stringify(snap.val(),null,3);
   });
-  
+   
+  dbRefList.on('')
   
 }());
