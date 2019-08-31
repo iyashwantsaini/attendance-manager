@@ -31,6 +31,11 @@ studloginsub.addEventListener('click', (e) => {
   var errorMessage = error.message;
   console.log(errorMessage);
   });
+  
+  firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            window.location = '../studentPortal.html';
+        }
 
 });
 
@@ -146,3 +151,5 @@ adminloginsub.addEventListener('click', (e) => {
   // var errorMessage = error.message;
   // console.log("error_!!");
   // });
+  
+  var console=document.getElementById("console")
