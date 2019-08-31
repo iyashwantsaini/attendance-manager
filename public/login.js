@@ -9,8 +9,6 @@ var studloginsub=document.getElementById("studsubmit");
 var teachloginsub=document.getElementById("teachsubmit");
 var adminloginsub=document.getElementById("adminsubmit");
 
-var 
-
 var user=null;
 
 studloginsub.addEventListener('click', (e) => {
