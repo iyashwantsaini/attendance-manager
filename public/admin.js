@@ -26,9 +26,12 @@ studadd.addEventListener('click',(e) => {
     var roll = studentroll.value;
     
       var database = firebase.database();
-      firebase.database().ref('users/students/').push({
-      username: name,
-      email: email });
+      firebase.database().ref('users/students/'+roll).set({
+      year:year,
+      branch:branch,
+      first:first,
+      last:last,
+      });
   
 });
 
