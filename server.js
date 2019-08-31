@@ -1,41 +1,28 @@
 // server.js
-// where your node app starts
-
 // init project
+
 const express = require('express');
 const app = express();
-
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
+// routes
 app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/landing.html');
+  response.sendFile(__dirname + '/views/landingPage.html');
 });
 
-// http://expressjs.com/en/starter/basic-routing.html
 app.get('/admin', function(request, response) {
-  response.sendFile(__dirname + '/views/admin.html');
+  response.sendFile(__dirname + '/views/adminPortal.html');
 });
 
 app.get('/studentPortal', function(request, response) {
   response.sendFile(__dirname + '/views/studentPortal.html');
 });
 
-
-app.get('/tt12', function(request, response) {
-  response.sendFile(__dirname + '/views/allstud.html');
-});
-
-
-
-
-
-
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port
-
 );
 });
 
