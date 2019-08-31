@@ -30,5 +30,7 @@
     
     const li = document.createElement('li');
     li.innerText = snap.val();
+    li.id = snap.key;
+    ulList = 
   
 }());

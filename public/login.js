@@ -36,17 +36,16 @@ studloginsub.addEventListener('click', (e) => {
   auth.onAuthStateChanged(function(user) {
   if (user) {
     console.log("user logged in!");
-      
+  } else {
+    console.log("not found eror!");
+  
   var database = firebase.database();
   var name="yash";
   var email="yash@yash.com";
-    firebase.database().ref('users').set({
+  firebase.database().ref('users').push({
     username: name,
     email: email,
-    // profile_picture : imageUrl
   });
-  } else {
-    console.log("not found eror!");
     // User is signed out.
   }
   });
