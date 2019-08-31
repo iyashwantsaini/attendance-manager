@@ -15,6 +15,19 @@ studloginsub.addEventListener('click', (e) => {
   var pass=studpass.value;
   var auth=firebase.auth();
   
+  auth.createUserWithEmailAndPassword(email, pass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+  }).then(function (){
+       var database = firebase.database();
+  var name="yash";
+  var email="yash@yash.com";
+  firebase.database().ref('users').push({
+    username: name,
+    email: email });
+  });
   auth.signInWithEmailAndPassword(email,pass).then(cred => {
     // console.log(cred.user);
     // export cred
@@ -26,25 +39,17 @@ studloginsub.addEventListener('click', (e) => {
   console.log(errorMessage);
   });
   
-  auth.createUserWithEmailAndPassword(email, pass).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
-  });
-  
   auth.onAuthStateChanged(function(user) {
   if (user) {
     console.log("user logged in!");
-  } else {
-    console.log("not found eror!");
-  
-  var database = firebase.database();
+     var database = firebase.database();
   var name="yash";
   var email="yash@yash.com";
   firebase.database().ref('users').push({
     username: name,
-    email: email,
+    email: email });
+  } else {
+    console.log("not found eror!");
   });
     // User is signed out.
   }
