@@ -15,9 +15,11 @@
 					  var table = document.getElementById("demo"); 
 				  for( var i = 0; i < 10; i++ ){ 
 						var row = document.createElement("tr"); 
-            row.style.border="2px solid #000";
+            table.style.border="2px solid #000";
+            //row.style.border="2px solid #000";
+            
 				  for( var j = 0; j < 10; j++ ){  
-
+        
 							  var col = document.createElement("td");  
 						  col.innerHTML = (i*10)+j + 1; 
             // assigning value to the cell
@@ -30,7 +32,20 @@
 			
 					 </script>  
 		
-					  
+					 <style>
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+</style> 
 		</head>
     	<body>
       <center>
