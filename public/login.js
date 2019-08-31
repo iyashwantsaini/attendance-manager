@@ -9,7 +9,7 @@ var studloginsub=document.getElementById("studsubmit");
 var teachloginsub=document.getElementById("teachsubmit");
 var adminloginsub=document.getElementById("adminsubmit");
 
-studloginsub.addEventListener('click', e => {
+studloginsub.addEventListener('click', function(){
   var email=studmail.value;
   var pass=studpass.value;
   var auth=firebase.auth();
@@ -20,5 +20,15 @@ studloginsub.addEventListener('click', e => {
   var errorMessage = error.message;
   // ...
   console.log(errorMessage);
+  });
+  
+  auth.onAuthStateChanged(function(user) {
+  if (user) {
+    console.log("user logged in!");
+  } else {
+    console.log("not found eror!");
+    // User is signed out.
+    // ...
+  }
 });
 });

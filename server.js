@@ -19,7 +19,20 @@ app.get('/admin', function(request, response) {
 });
 
 
+app.get('/tt12', function(request, response) {
+  response.sendFile(__dirname + '/views/allstud.html');
+});
+
+
+
+
+
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
+  console.log('Your app is listening on port ' + listener.address().port
+
+);
 });
+
+

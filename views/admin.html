@@ -92,12 +92,52 @@
                           <label for="email">Email</label>
                         </div>
                       </div>
+                      <div class="row">
+                            <div class="input-field col s6">
+                              <input  type="file">
+                              <label for="first_name">Upload File</label>
+                            </div>
+                      </div>
                   
                     </form>
-                  </div>
+              </div>
     </div>
     <div id="addStudent" class="tabcontent">
         <h3>Add Student</h3>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="First Name" id="first_name" type="text" class="validate">
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input  id="teacherCode" type="text">
+                <label for="teacherCode">Teacher's Code</label>
+              </div>
+            </div>
+           
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+                  <div class="input-field col s6">
+                    <input  type="file">
+                    <label for="first_name">Upload File</label>
+                  </div>
+            </div>
+        
+          </form>
+        </div>
     </div>
   <div id="viewStudent" class="tabcontent">
         <h3>View Student</h3>
@@ -117,27 +157,27 @@
     </script>
 
     <script>
-        function openCity(evt, cityName) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
+      function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
 
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
 
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
 
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+    </script>s
 
 
 
