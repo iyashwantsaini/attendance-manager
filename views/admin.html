@@ -112,7 +112,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label class="waves-effect waves-light btn-large z-depth-5 custom-inp">
+                        <label class="waves-effect waves-light btn z-depth-5 custom-inp">
                             <input type="file" id="teacher_file" />
                             Choose csv/excel file
                         </label>
@@ -153,17 +153,37 @@
                     </select>
                     <label>Year</label>
                 </div>
+                <div class="input-field col s12">
+                    <select>
+                        <option value="" disabled selected>Branch</option>
+                        <option value="coe">COE</option>
+                        <option value="chemical">Chemical</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="civil">Civil</option>
+                        <option value="ece">ECE</option>
+                        <option value="biotech">BioTech</option>
+                    </select>
+                    <label>Year</label>
+                </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label class="waves-effect waves-light btn-large z-depth-5 custom-inp">
+                        <label class="waves-effect waves-light btn z-depth-5 custom-inp">
                             <input type="file" id="student_file" />
                             Choose csv/excel file
                         </label>
                     </div>
+                    <div class="row">
+                            <div class="input-field col s12">
+                                    <a class="waves-effect waves-light btn z-depth-5 right" ><i class="material-icons">add</i>Add</a>
+                            </div>
+                    </div>
                 
-                <button class="btn waves-effect waves-light green right" type="submit" name="action" id="studsubmit">Add
-    <i class="material-icons right">add</i>
-  </button></div>
+                </div>
+                <div class="row">
+                        <div class="input-field col s12">
+                                <a class="waves-effect waves-light btn z-depth-5 right" ><i class="material-icons">add</i>Add</a>
+                        </div>
+                </div>
             </form>
         </div>
     </div>
