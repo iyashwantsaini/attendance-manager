@@ -26,6 +26,13 @@ studloginsub.addEventListener('click', (e) => {
   console.log(errorMessage);
   });
   
+  auth.createUserWithEmailAndPassword(email, pass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+  });
+  
   auth.onAuthStateChanged(function(user) {
   if (user) {
     console.log("user logged in!");
@@ -35,4 +42,15 @@ studloginsub.addEventListener('click', (e) => {
     // ...
   }
 });
+});
+
+studlogoutsub.addEventListener('click',(e) => {
+  e.preventDefault();
+  var auth=firebase.auth();
+  auth.signOut().then(function() {
+  // Sign-out successful.
+  }, function(error) {
+  // An error happened.
+  });
+
 });

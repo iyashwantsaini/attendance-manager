@@ -18,6 +18,10 @@ app.get('/admin', function(request, response) {
   response.sendFile(__dirname + '/views/admin.html');
 });
 
+app.get('/studentPortal', function(request, response) {
+  response.sendFile(__dirname + '/views/studentPortal.html');
+});
+
 
 app.get('/tt12', function(request, response) {
   response.sendFile(__dirname + '/views/allstud.html');
