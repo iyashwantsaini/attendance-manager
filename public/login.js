@@ -9,11 +9,13 @@ var studloginsub=document.getElementById("studsubmit");
 var teachloginsub=document.getElementById("teachsubmit");
 var adminloginsub=document.getElementById("adminsubmit");
 
+var 
+
 var user=null;
 
 studloginsub.addEventListener('click', (e) => {
   e.preventDefault();
-  var email=studmail.value;
+  var email=studmail.value+"@student.com";
   var pass=studpass.value;
   var auth=firebase.auth();
   
@@ -36,30 +38,7 @@ studloginsub.addEventListener('click', (e) => {
 
 teachloginsub.addEventListener('click', (e) => {
   e.preventDefault();
-  
-  var email=studmail.value +"@teacher.com";
-  var pass=studpass.value;
-  var auth=firebase.auth();
-  
-  auth.signInWithEmailAndPassword(email,pass).then(function(){
-  console.log("login_success!!");
-  
-  var user = firebase.auth().currentUser;
-  if (user != null) {
-    user.providerData.forEach(function (profile) {
-      console.log("  Email: " + profile.email);
-    });
-  }    
-  }).catch(function(error) {
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  console.log(errorMessage);
-  });
-});
-
-adminloginsub.addEventListener('click', (e) => {
-  e.preventDefault();
-  var email=teachmail.value;
+  var email=teachmail.value +"@teacher.com";
   var pass=teachpass.value;
   var auth=firebase.auth();
   
@@ -71,13 +50,34 @@ adminloginsub.addEventListener('click', (e) => {
     user.providerData.forEach(function (profile) {
       console.log("  Email: " + profile.email);
     });
+  }
+  }).catch(function(error) {
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorMessage);
+  });
+});
+
+adminloginsub.addEventListener('click', (e) => {
+  e.preventDefault();
+  var email=adminmail.value+"@admin.com";
+  var pass=adminpass.value;
+  var auth=firebase.auth();
+  
+  auth.signInWithEmailAndPassword(email,pass).then(function(){
+  console.log("login_success!!");
+  
+  var user = firebase.auth().currentUser;
+  if (user != null) {
+    user.providerData.forEach(function (profile) {
+      console.log("  Email: " + profile.email);
+    });
   }    
   }).catch(function(error) {
   var errorCode = error.code;
   var errorMessage = error.message;
   console.log(errorMessage);
   });
-
 });
 
 //   auth.onAuthStateChanged(function(user) {
@@ -117,18 +117,18 @@ adminloginsub.addEventListener('click', (e) => {
 
 
   
-  auth.createUserWithEmailAndPassword(email, pass).then(function (){
-  var database = firebase.database();
-  var name="yash";
-  var email="yash@yash.com";
-  firebase.database().ref('users').push({
-    username: name,
-    email: email });
-  }).catch(function(error) {
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  console.log("error_!!");
-  });Password(email, pass).then(function (){
+  // auth.createUserWithEmailAndPassword(email, pass).then(function (){
+  // var database = firebase.database();
+  // var name="yash";
+  // var email="yash@yash.com";
+  // firebase.database().ref('users').push({
+  //   username: name,
+  //   email: email });
+  // }).catch(function(error) {
+  // var errorCode = error.code;
+  // var errorMessage = error.message;
+  // console.log("error_!!");
+  // });Password(email, pass).then(function (){
   // var database = firebase.database();
   // var name="yash";
   // var email="yash@yash.com";
