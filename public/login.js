@@ -34,9 +34,8 @@ studloginsub.addEventListener('click', (e) => {
   
   firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            window.location = '../studentPortal.html';
+            window.location = 'https://www.google.com';
         }
-
 });
 
 teachloginsub.addEventListener('click', (e) => {
@@ -119,11 +118,7 @@ adminloginsub.addEventListener('click', (e) => {
 // });
 
 
-
-  
   // auth.createUserWithEmailAnd
-
-
 
   
   // auth.createUserWithEmailAndPassword(email, pass).then(function (){
@@ -152,4 +147,14 @@ adminloginsub.addEventListener('click', (e) => {
   // console.log("error_!!");
   // });
   
-  var console=document.getElementById("console")
+  var console=document.getElementById("console_database");
+  
+  console.addEventListener('click',function(){
+    var ref = firebase.database().ref();
+
+  ref.on("value", function(snapshot) {
+     console.log(snapshot.val());
+  }, function (error) {
+     console.log("Error: " + error.code);
+  });
+    });
