@@ -15,9 +15,7 @@
          for (var i = 0; i < arr1.length; i++) { 
     arr1[i] = new Array(10); 
 }
-         var h = 0; 
-  
-// Loop to initilize 2D array elements. 
+        
       
          
          
@@ -28,7 +26,7 @@
 				  for( var j = 0; j < 10; j++ ){  
 
 							  var col = document.createElement("td");  
-            arr1[i][j] = h++; 
+            arr1[i][j] = (i*10)+j + 1; 
 						  col.innerHTML = (i*10)+j + 1; // assigning value to the cell
             col.style.fontSize="50px";
 						row.appendChild(col);  
