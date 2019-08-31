@@ -20,6 +20,10 @@ app.get('/studentPortal', function(request, response) {
   response.sendFile(__dirname + '/views/studentPortal.html');
 });
 
+app.get('/teacherPortal', function(request, response) {
+  response.sendFile(__dirname + '/views/teacherPortal.html');
+});
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port
