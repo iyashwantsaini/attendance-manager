@@ -9,4 +9,16 @@ var studloginsub=document.getElementById("studsubmit");
 var teachloginsub=document.getElementById("teachsubmit");
 var adminloginsub=document.getElementById("adminsubmit");
 
-studloginsub.addEventListener('click',)
+studloginsub.addEventListener('click', e => {
+  var email=studmail.value;
+  var pass=studpass.value;
+  var auth=firebase.auth();
+  
+  auth.signInWithEmailAndPassword(email,pass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+  console.log(errorMessage);
+});
+});

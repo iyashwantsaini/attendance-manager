@@ -9,6 +9,10 @@ const app = express();
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
+app.get('/', function(request, response) {
+  response.sendFile(__dirname + '/views/landing.html');
+});
+
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/admin', function(request, response) {
   response.sendFile(__dirname + '/views/admin.html');

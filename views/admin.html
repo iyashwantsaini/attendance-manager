@@ -60,16 +60,50 @@
         <div class="divider"></div>
 
         <li><a class="subheader">VIEW</a></li>
-        <li><a class="waves-effect" href="#!">TEACHERS</a></li>
-        <li><a class="waves-effect" href="#!">STUDENTS</a></li>
+        <li><a class="waves-effect tablinks" onclick="openCity(event, 'viewTeacher')">TEACHERS</a></li>
+        <li><a class="waves-effect tablinks" onclick="openCity(event, 'viewStudent')">STUDENTS</a></li>
     </ul>
 
     <!-- Tab content -->
     <div id="addTeacher" class="tabcontent">
-        <h3>Add Teacher</h3>
+        <h4 class="center">ADD A TEACHER</h4>
+            <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input placeholder="First Name" id="first_name" type="text" class="validate">
+                          <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="last_name" type="text" class="validate">
+                          <label for="last_name">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input  id="teacherCode" type="text">
+                          <label for="teacherCode">Teacher's Code</label>
+                        </div>
+                      </div>
+                     
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email" type="email" class="validate">
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                  
+                    </form>
+                  </div>
     </div>
     <div id="addStudent" class="tabcontent">
         <h3>Add Student</h3>
+    </div>
+  <div id="viewStudent" class="tabcontent">
+        <h3>View Student</h3>
+    </div>
+  <div id="viewTeacher" class="tabcontent">
+        <h3>View Teacher</h3>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
