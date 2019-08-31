@@ -2,103 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Student Portal</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <style>
-        .container {
-            display: flex;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Portal</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .container p {
+      margin: auto;
+    }
+
+    @media only screen and (max-width : 502px) {
+      .brand-logo {
+        font-size: 1.8em !important;
+      }
+
+      @media only screen and (max-width : 400px) {
+        .brand-logo {
+          font-size: 1.4em !important;
         }
 
-        .container p {
-            margin: auto;
+        @media only screen and (max-width : 300px) {
+          .brand-logo {
+            font-size: 1em !important;
+          }
         }
-      @media only screen and (max-width : 502px) {
-        .brand-logo{
-          font-size: 1.8em!important;
-        }
-      }
-    </style>
+  </style>
 </head>
 
 <body>
 
-    <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!"><i class="material-icons">logout</i>Logout</a></li>
-    </ul>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo"><i class="material-icons"></i>STUDENT PORTAL</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">Mark Attendance</a></li>
-                <li><a href="#">View Attendance</a></li>
-                <li>&nbsp;Hi {Username} ! &nbsp; &nbsp;</li>
-                <li><a href="#"><i class="material-icons">logout</i></a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <ul class="sidenav" id="mobile-demo">
-        <li>      &nbsp;&nbsp;Hi, {Username} !</li>
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!"><i class="material-icons">logout</i>Logout</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons"></i>STUDENT PORTAL</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         <li><a href="#">Mark Attendance</a></li>
         <li><a href="#">View Attendance</a></li>
-        <li><a href="#">Logout</a></li>
-    </ul>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12 center-align">
-                <h4><strong>YEAR:</strong> 2 &nbsp;&nbsp;&nbsp;<strong>Batch:</strong> COE17</h4>
-              </div>
-          <div class="divider"></div>
-            <div class="col s12 center-align">
-                Please Mark Your Attend            <div class="container">
-                <table>
-                    <thead>
-                      <tr>
-                          <th>SUBJECT</th>
-                          <th>TEACHER</th>
-                          <th>ATTENDANCE</th>
-                      </tr>
-                    </thead>
-            
-                    <tbody>
-                      <tr>
-                        <td>UTA007</td>
-                        <td>Mr. Ankush Phatania</td>
-                        <td>
-                            <p>
-                                <label>
-                                  <input type="checkbox" />
-                                  <span></span>
-                                </label>
-                              </p>
-                        </td>
-                      </tr>
-                     
-                      </tr>
-                    </tbody>
-                  </table>
-                        
-            </div>       </div>
-          
-        </div>
+        <li>&nbsp;Hi {Username} ! &nbsp; &nbsp;</li>
+        <li><a href="#"><i class="material-icons">logout</i></a></li>
+      </ul>
     </div>
+  </nav>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-        });
-    </script>
+  <ul class="sidenav" id="mobile-demo">
+    <li> &nbsp;&nbsp;Hi, {U}sername} !</li>
+    <li></a><a href="#">Mark Attendance</a></li>
+    <li><a href="#">View Attendance</a></li>
+    <li><a href="#">Logout</a></li>
+  </ul>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12 center-align">
+        <h4><strong>YEAR:</strong> 2 &nbsp;&nbsp;&nbsp;<strong>Batch:</strong> COE17</h4>
+      </div>
+      <div class="divider"></div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <div class="col s12 center "><strong>Please Mark Your Attendancease</strong>
+        <div class="container">
+          <table>
+            <thead>
+              <tr>
+                <th>SUBJECT</th>
+                <th>TEACHER</th>
+                <th>ATTENDANCE</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>UTA007</td>
+                <td>Mr. Ankush Phatania</td>
+                <td>
+                  <p>
+                    <label>
+                      <input type="checkbox" />
+                      <span></span>
+                    </label>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+    });
+  </script>
 </body>
 
 </html>
