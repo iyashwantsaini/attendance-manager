@@ -10,14 +10,19 @@ var studentfirst=document.getElementById("student_first_name");
 var studentlast=document.getElementById("student_last_name");
 var studentroll=document.getElementById("student_roll_no");
 
-teachadd.addEventListener('click',(e) => {
-  // var e = document.getElementById("year");
-  // var strUser = e.options[e.selectedIndex].value;
-  // console.log(strUser);
+studadd.addEventListener('click',function(){
   console.log("hello");
-  console.log(studentfirst.value);
 });
 
-// studadd.addEventListener(function(){
-  
-// });
+teachadd.addEventListener('click',(e) => {
+    // var e = document.getElementById("year");
+    // var strUser = e.options[e.selectedIndex].value;
+    // console.log(strUser);
+    console.log("hello");
+    console.log(teachfirst.value);
+  });
+var x = document.getElementById("teachadd");
+x.addEventListener("click", (e) => {
+  console.log("working !!");
+});
+
