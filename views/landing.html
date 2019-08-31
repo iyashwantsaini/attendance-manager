@@ -15,11 +15,47 @@
 </head>
 
 <body>
-    <div class="container">
-        <a class="waves-effect waves-light btn-large">STUDENT</a>
-        <a class="waves-effect waves-light btn-large">TEACHER</a>
-      <a class="waves-effect waves-light btn-large">ADMIN</a>
+
+    <!-- Modal Structure -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+        </div>
     </div>
+
+    <div class="container">
+        <a class="waves-effect waves-light btn-large" href="#studentModal">STUDENT</a>
+        <a class=" waves-effect waves-light btn-large">TEACHER</a>
+        <a class="waves-effect waves-light btn-large">ADMIN</a>
+    </div>
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+    <!-- Modal Structure -->
+    <div id="teacherModal" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+    </script>
 </body>
 
-</html>>
+</html>
