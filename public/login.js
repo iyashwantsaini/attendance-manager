@@ -126,7 +126,9 @@ adminloginsub.addEventListener('click', (e) => {
   // var errorCode = error.code;
   // var errorMessage = error.message;
   // console.log("error_!!");
-  // });Password(email, pass).then(function (){
+  // });
+
+// Password(email, pass).then(function (){
   // var database = firebase.database();
   // var name="yash";
   // var email="yash@yash.com";

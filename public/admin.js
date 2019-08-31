@@ -23,6 +23,12 @@ studadd.addEventListener('click',(e) => {
     var branch = studentbranch.options[studentbranch.selectedIndex].value;
     var first = studentfirst.value;
     var last = studentlast.value;
+    var roll = studentroll.value;
+    
+      var database = firebase.database();
+      firebase.database().ref('users/students/').push({
+      username: name,
+      email: email });
   
 });
 
