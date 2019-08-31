@@ -2,7 +2,7 @@
     display: flexbox;
     text-align: center;
     margin-top: 10em;
-  box-shadow: 0 0 0  
+    box-shadow: 1px 2px 50px 0px rgba(0, 150, 0, 0.1);
 }
 
 .container a {
