@@ -1,3 +1,6 @@
+body{
+  background-image:url("http://www.thapar.edu/images/phocagallery/Thapar_Uni/2.jpg");;  
+}
 .container {
     display: flexbox;
     text-align: center;
