@@ -36,6 +36,15 @@ studloginsub.addEventListener('click', (e) => {
   auth.onAuthStateChanged(function(user) {
   if (user) {
     console.log("user logged in!");
+      
+  var database = firebase.database();
+  var name="yash";
+  var email="yash@yash.com";
+    firebase.database().ref('users').set({
+    username: name,
+    email: email,
+    // profile_picture : imageUrl
+  });
   } else {
     console.log("not found eror!");
     // User is signed out.

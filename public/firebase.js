@@ -26,6 +26,9 @@
     preObject.innerText = JSON.stringify(snap.val(),null,3);
   });
    
-  dbRefList.on('')
+  dbRefList.on('child_added',snap =>{
+    
+    const li = document.createElement('li');
+    li.innerText = snap.val();
   
 }());
