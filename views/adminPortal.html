@@ -13,7 +13,8 @@
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-database.js"></script>
-  <style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
         input[type="file"] {
             display: none;
         }
@@ -24,228 +25,413 @@
         .container {
             padding-left: 0px;
         }
+
         /* .tabcontent {
             
         } */
-      
-      
+
+
         .custom-inp {
             color: #fff !important;
             transition: 0.25s;
         }
-      .custom-inp:hover{
-        transition: 0.05s;
-      }
 
-    
-    
+        .custom-inp:hover {
+            transition: 0.05s;
+        }
 
+        #studList {
+            display: none
+        }
+
+        #teachList {
+            display: none
+        }
     </style>
 
 </head>
 
 <body>
-    <nav> 
+    <nav>
         <a> <i style="padding:10px;" class="material-icons right">logout</i></a>
     </nav>
 
-    
-  <div class="container">
+
+    <div class="container">
         <!-- card1-->
-    <h4 class="subheader center-align">ADD</h4>
-    <div class="divider"></div>
-    <div class="row">
+        <h4 class="subheader center-align">ADD</h4>
+        <div class="divider"></div>
+        <div class="row">
             <div class="col s12 ">
-              <div class="card">
-                <div class="card blue-grey darken-1">
-                       
-                  <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
-                  <div class="card-content white-text">
-                        <span class="card-title">ADD TEACHER</span>
-                <p></p>
+                <div class="card">
+                    <div class="card blue-grey darken-1">
+
+                        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal1"><i
+                                class="material-icons">add</i></a>
+                        <div class="card-content white-text">
+                            <span class="card-title">ADD TEACHER</span>
+                            <p></p>
                         </div>
                     </div>
-              </div>
+                </div>
             </div>
-          </div>
-    <!-- card1 end -->
-    <!-- modal teacher -->
-    <div id="modal1" class="modal">
+        </div>
+        <!-- card1 end -->
+        <!-- modal teacher -->
+        <div id="modal1" class="modal">
             <div class="modal-content">
-                    <div id="addTeacher" class="tabcontent">
-                            <h4 class="center">ADD A TEACHER</h4>
+                <div id="addTeacher" class="tabcontent">
+                    <h4 class="center">ADD A TEACHER</h4>
+                    <div class="row">
+                        <form class="col s12">
                             <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <input placeholder="First Name" id="teacher_first_name" type="text" class="validate">
-                                            <label for="first_name">First Name</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="teacher_last_name" type="text" class="validate">
-                                            <label for="last_name">Last Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="teacher_code" type="text">
-                                            <label for="teacherCode">Teacher's Code</label>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="teacher_email" type="email" class="validate">
-                                            <label for="email">Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                    <!--                     <div class="input-field col s6">
+                                <div class="input-field col s6">
+                                    <input placeholder="First Name" id="teacher_first_name" type="text"
+                                        class="validate">
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="teacher_last_name" type="text" class="validate">
+                                    <label for="last_name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="teacher_code" type="text">
+                                    <label for="teacherCode">Teacher's Code</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="teacher_email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!--                     <div class="input-field col s6">
                                             <label class="waves-effect waves-light btn z-depth-5 custom-inp">
                                                 <input type="file" id="teacher_file" />
                                                 Choose csv/excel file
                                             </label>
                                         </div> -->
-                                    </div>
-                                    <div class="row">
-                                            <div class="input-field col s12">
-                                                    <button id="teachadd" class="waves-effect waves-light btn z-depth-5 right addButton" ><i class="material-icons" >add</i>Add</button>
-                                            </div>
-                                    </div>
-                                </form>
                             </div>
-                        </div>
-          </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button id="teachadd"
+                                        class="waves-effect waves-light btn z-depth-5 right addButton"><i
+                                            class="material-icons">add</i>Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    <!-- modal1 end -->
-    <div class="row">
+        <!-- modal1 end -->
+        <div class="row">
             <div class="col s12">
-              <div class="card">
-                <div class="card blue-grey darken-1">
-                       
-                  <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal2"><i class="material-icons">add</i></a>
-                  <div class="card-content white-text">
-                        <span class="card-title">ADD STUDENT</span>
-                
+                <div class="card">
+                    <div class="card blue-grey darken-1">
+
+                        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal2"><i
+                                class="material-icons">add</i></a>
+                        <div class="card-content white-text">
+                            <span class="card-title">ADD STUDENT</span>
+
                         </div>
                     </div>
-              </div>
+                </div>
             </div>
-          </div>
-          
-          <div id="modal2" class="modal">
-                <div class="modal-content">
-                        <div id="addStudent" >
-                                <h3>Add Student</h3>
-                                <div class="row">
-                                    <form class="col s12">
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input placeholder="First Name" id="student_first_name" type="text" class="validate">
-                                                <label for="first_name">First Name</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input id="student_last_name" type="text" class="validate">
-                                                <label for="last_name">Last Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="student_roll_no" type="text">
-                                                <label for="teacherCode">Roll No</label>
-                                            </div>
-                                        </div>
-                        
-                                        <div class="input-field col s12">
-                                            <select id="year">
-                                                <option value="" disabled selected>Choose your option</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="3">4</option>
-                                            </select>
-                                            <label>Year</label>
-                                        </div>
-                                        <div class="input-field col s12">
-                                            <select id="branch">
-                                                <option value="" disabled selected>Branch</option>
-                                                <option value="coe">COE</option>
-                                                <option value="chemical">Chemical</option>
-                                                <option value="electrical">Electrical</option>
-                                                <option value="civil">Civil</option>
-                                                <option value="ece">ECE</option>
-                                                <option value="biotech">BioTech</option>
-                                            </select>
-                                            <label>Year</label>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="student_batch" type="text">
-                                                <label for="student_batch">Batch</label>
-                                            </div>
-                                        </div>
-                                            <div class="row">
-                                                    <div class="input-field col s12" >
-                                                            <button id="studadd" type="submit" class="waves-effect waves-light btn z-depth-5 right"><i class="material-icons">add</i>Add</button>
-                                                    </div>
-                                            </div>
-                                        
-                                        </div>
-                                        
-                                    </form>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <div id="addStudent">
+                    <h3>Add Student</h3>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="First Name" id="student_first_name" type="text"
+                                        class="validate">
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="student_last_name" type="text" class="validate">
+                                    <label for="last_name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="student_roll_no" type="text">
+                                    <label for="teacherCode">Roll No</label>
                                 </div>
                             </div>
 
+                            <div class="input-field col s12">
+                                <select id="year">
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                                <label>Year</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <select id="branch">
+                                    <option value="" disabled selected>Branch</option>
+                                    <option value="coe">COE</option>
+                                    <option value="chemical">Chemical</option>
+                                    <option value="electrical">Electrical</option>
+                                    <option value="civil">Civil</option>
+                                    <option value="ece">ECE</option>
+                                    <option value="biotech">BioTech</option>
+                                </select>
+                                <label>Branch</label>
+                            </div>
+                            <div class="row">
+                                <!--                     <div class="input-field col s6">
+                                                <label class="waves-effect waves-light btn z-depth-5 custom-inp">
+                                                    <input type="file" id="student_file" />
+                                                    Choose csv/excel file
+                                                </label>
+                                            </div> -->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <button id="studadd" type="submit"
+                                            class="waves-effect waves-light btn z-depth-5 right"><i
+                                                class="material-icons">add</i>Add</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
-               
-              </div>
-  
-    
-    
-    <h4 class="subheader center-align">VIEWS</h4>
-    <div class="divider"></div>
-    <div id="viewStudent" class="tabcontent">
-        <h3>View Student</h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- <div id="addStudent" class="tabcontent">
+        <h3>Add Student</h3>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="First Name" id="student_first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="student_last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="student_roll_no" type="text">
+                        <label for="teacherCode">Roll No</label>
+                    </div>
+                </div>
+
+                <div class="input-field col s12">
+                    <select id="year">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                    </select>
+                    <label>Year</label>
+                </div>
+                <div class="input-field col s12">
+                    <select id="branch">
+                        <option value="" disabled selected>Branch</option>
+                        <option value="coe">COE</option>
+                        <option value="chemical">Chemical</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="civil">Civil</option>
+                        <option value="ece">ECE</option>
+                        <option value="biotech">BioTech</option>
+                    </select>
+                    <label>Year</label>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                        <label class="waves-effect waves-light btn z-depth-5 custom-inp">
+                            <input type="file" id="student_file" />
+                            Choose csv/excel file
+                        </label>
+                    </div> 
+                    <div class="row">
+                            <div class="input-field col s12" >
+                                    <button id="studadd" type="submit" class="waves-effect waves-light btn z-depth-5 right"><i class="material-icons">add</i>Add</button>
+                            </div>
+                    </div>
+                
+                </div>
+                
+            </form>
+        </div>
+    </div> -->
+        <h4 class="subheader center-align">VIEWS</h4>
+        <div class="divider"></div>
+        <div id="viewStudent" class="tabcontent row">
+            <h5>View Student</h5><br>
+            <div class="input-field col s12  offset-s3" style="max-width: 400px">
+                <form class="col s12">
+                    <div class="row">
+                        <select id="viewBatch">
+                            <option value="" disabled selected>Choose the Batch</option>
+                            <option value="1">COE1</option>
+                            <option value="2">COE2</option>
+                            <option value="3">COE3</option>
+                            <option value="3">COE4</option>
+                        </select>
+                        <label>Batch</label>
+                    </div>
+                    <button id="viewStud" type="submit"
+                        class="waves-effect waves-light btn z-depth-5 center">View</button>
+                </form>
+
+                <table id="studList">
+                    <tr>
+                        <th>Roll No.</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Year</th>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <div id="viewTeacher" class="tabcontent row">
+            <h5>View Teacher</h5><br>
+            <div class="input-field col s12  offset-s3" style="max-width: 400px">
+                <form action="">
+                    <button id="viewTeach" type="submit"
+                        class="waves-effect waves-light btn z-depth-5 center">View</button>
+                </form>
+
+                <table id="teachList">
+                    <tr>
+                        <th>Code</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
     </div>
-    <div id="viewTeacher" class="tabcontent">
-        <h3>View Teacher</h3>
-    </div>
-  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
 
- 
-  
+
+    <!--  Tabs script  -->
+
+
     <!--  Dropdown Script  -->
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, {});
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, {});
-  });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, {});
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, {});
+        });
+    </script>
 
-  </script>
-  
-  <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBBgyIY1ru34Ij6KO_-RVTICcEsTzJ8yuU",
-    authDomain: "attenman.firebaseapp.com",
-    databaseURL: "https://attenman.firebaseio.com",
-    projectId: "attenman",
-    storageBucket: "",
-    messagingSenderId: "1035758949707",
-    appId: "1:1035758949707:web:4779f27dd6c1a12e"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBBgyIY1ru34Ij6KO_-RVTICcEsTzJ8yuU",
+            authDomain: "attenman.firebaseapp.com",
+            databaseURL: "https://attenman.firebaseio.com",
+            projectId: "attenman",
+            storageBucket: "",
+            messagingSenderId: "1035758949707",
+            appId: "1:1035758949707:web:4779f27dd6c1a12e"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 
-</script>
-  
-<script src="./admin.js"></script>
+    <script src="./admin.js"></script>
+
+    <!-- View Students Table -->
+    <script type="text/javascript">
+        var database = document.getElementById("viewStudent");
+        var content1 = '';
+        database.addEventListener('submit', (e) => {
+            e.preventDefault();
+            $("#viewStud").addClass("disabled");
+            var batch = $("#viewBatch").find(":selected").text();
+            console.log(batch);
+            var ref = firebase.database().ref('/users/');
+            var k = [];
+            var mm;
+            var content = '';
+            ref.on('value', function (snapshot) {
+                snapshot.forEach(function (data) {
+                    k.push(data.val())
+                });
+                mm = k[0];
+                // console.log(mm[Object.keys(mm)[0]].batch);
+                document.getElementById("studList").style.display = "block";
+                var i = 0;
+                while (mm[Object.keys(mm)[i]] != null && mm[Object.keys(mm)[i]]["batch"] == batch) {
+                    content = '<tr>';
+                    content += '<td>' + Object.keys(mm)[i] + '</td>'; //column1
+                    content += '<td>' + mm[Object.keys(mm)[i]]["first"] + '</td>'; //column2
+                    content += '<td>' + mm[Object.keys(mm)[i]]["last"] + '</td>';
+                    content += '<td>' + mm[Object.keys(mm)[i]]["year"] + '</td>';
+                    content += '</tr>';
+                    i++;
+                    //console.log(content);
+                    $("#studList").append(content);
+                }
+            });
+        });
+    </script>
+    <!-- View TEacher Table -->
+    <script type="text/javascript">
+        var database = document.getElementById("viewTeacher");
+        var content1 = '';
+        database.addEventListener('submit', (e) => {
+            e.preventDefault();
+            $("#viewTeach").addClass("disabled");
+            var ref = firebase.database().ref('/users/');
+            var k = [];
+            var mm;
+            var content = '';
+            ref.on('value', function (snapshot) {
+                snapshot.forEach(function (data) {
+                    k.push(data.val())
+                });
+                mm = k[1];
+                // console.log(mm[Object.keys(mm)[0]].batch);
+                document.getElementById("teachList").style.display = "block";
+                var i = 0;
+                while (mm[Object.keys(mm)[i]] != null) {
+                    content = '<tr>';
+                    content += '<td>' + Object.keys(mm)[i] + '</td>'; //column1
+                    content += '<td>' + mm[Object.keys(mm)[i]]["first"] + '</td>'; //column2
+                    content += '<td>' + mm[Object.keys(mm)[i]]["last"] + '</td>';
+                    content += '<td>' + mm[Object.keys(mm)[i]]["email"] + '</td>';
+                    content += '</tr>';
+                    i++;
+                    //console.log(content);
+                    $("#teachList").append(content);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

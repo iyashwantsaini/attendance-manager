@@ -11,24 +11,24 @@
 
 			<!-- matrix -->
 			 <script type="text/javascript"> 
-          var arr1 = new Array(10);
+         var arr1 = new Array(10);
          for (var i = 0; i < arr1.length; i++) { 
-    arr2[i] = new Array(10); 
+    arr1[i] = new Array(10); 
 }
+        
+      
+         
+         
 					 var t = function() {  
 					  var table = document.getElementById("demo"); 
 				  for( var i = 0; i < 10; i++ ){ 
 						var row = document.createElement("tr"); 
-            table.style.border="2px solid #000";
-            //row.style.border="2px solid #000";
-            
 				  for( var j = 0; j < 10; j++ ){  
-        
+
 							  var col = document.createElement("td");  
-             arr2[i][j] = (i*10)+j + 1; 
-						  col.innerHTML = (i*10)+j + 1; 
+            arr1[i][j] = (i*10)+j + 1; 
+						  col.innerHTML = (i*10)+j + 1; // assigning value to the cell
             col.style.fontSize="50px";
-            // assigning value to the cell
 						row.appendChild(col);  
 						 }  
 						 table.appendChild(row);
@@ -36,9 +36,8 @@
 					 }; 
 					 window.onload=t;
 			
-					 </script>  
-		
-					 <style>
+					 </script>
+       <style>
 table, td, th {
   border: 1px solid black;
 }
@@ -52,11 +51,12 @@ th {
   height: 50px;
 }
 </style> 
+		
+					  
 		</head>
     	<body>
       <center>
-			<table id="demo">
-        </table>
+			<table id="demo"></table>
       
 			<script>var n=1;
 			function timer(){
@@ -84,7 +84,9 @@ th {
 	timer();
 	</script>
 
-        <a href="./t2">DONE</a>
+      <h4>
+        Only thoose request will be accepted thoose who have entered wrong entries.
+        </h4>
 
         </center>
 
