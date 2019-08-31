@@ -9,17 +9,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+   
 </head>
 <body>
-    <nav> <!-- navbar content here  --> </nav>
+    <nav>  </nav>
 
-    <ul id="slide-out" class="sidenav">
+    <ul id="slide-out" class="sidenav sidenav-fixed">
       <li><div class="user-view">
         <div class="background">
           <img src="images/office.jpg">
         </div>
-        <a href="#user"><img class="circle" src="images/yuna.jpg"alt="missing"></a>
+        <a href="#user"> <img class="circle" src="images/yuna.jpg"alt="missing"> </a>
         <a href="#name"><span class="white-text name">John Doe</span></a>
         <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
       </div></li>
@@ -29,6 +29,13 @@
       <li><a class="subheader">Subheader</a></li>
       <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
     </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i><
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });
+        </script>
 </body>
 </html>

@@ -151,6 +151,34 @@
       
       var studlogin=function(){
         var studmail=document.querySelector("#studmail");
+        var studpass=document.querySelector("#studpass");
+        
+        if(!studmail || !studpass){
+          return console.log("mail & pass are required!");
+        }
+        
+        firebase.auth().signInWithEmailAndPassword(studmail, studpass).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        });
+      }
+      
+      var teachlogin=function(){
+        var teachmail=document.querySelector("#teachmail");
+        var teachpass=document.querySelector("#teachpass");
+        
+        if(!teachmail || !teachpass){
+          return console.log("mail & pass are required!");
+        }
+        
+        firebase.auth().signInWithEmailAndPassword(teachmail, teachpass).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        });
       }
     </script>      
 
