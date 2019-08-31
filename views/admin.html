@@ -24,6 +24,15 @@
         .tabcontent {
             display: none;
         }
+      
+      
+        .custom-inp {
+            color: #fff !important;
+            transition: 0.25s;
+        }
+      .custom-inp:hover{
+        transition: 0.05s;
+      }
 
         @media only screen and (min-width : 992px) {
 
@@ -38,9 +47,7 @@
                 padding-left: 350px;
             }
         }
-        .custom-inp{
-            color:#fff;
-        }
+
     </style>
 
 </head>
@@ -106,7 +113,7 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <label class="waves-effect waves-light btn-large z-depth-5 custom-inp">
-                            <input type="file" id="teacher_file"/>
+                            <input type="file" id="teacher_file" />
                             Choose csv/excel file
                         </label>
                     </div>
@@ -137,21 +144,26 @@
                 </div>
 
                 <div class="input-field col s12">
-                  <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                  </select>
-                  <label>Materialize Select</label>
-              </div>
+                    <select>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                    </select>
+                    <label>Year</label>
+                </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="file">
-                        <label for="first_name">Upload File</label>
+                        <label class="waves-effect waves-light btn-large z-depth-5 custom-inp">
+                            <input type="file" id="student_file" />
+                            Choose csv/excel file
+                        </label>
                     </div>
-                </div>
-
+                
+                <button class="btn waves-effect waves-light green right" type="submit" name="action" id="studsubmit">Add
+    <i class="material-icons right">add</i>
+  </button></div>
             </form>
         </div>
     </div>
@@ -171,6 +183,7 @@
         });
     </script>
 
+    <!--  Tabs script  -->
     <script>
         function openCity(evt, cityName) {
             // Declare all variables
@@ -193,5 +206,14 @@
             evt.currentTarget.className += " active";
         }
     </script>
+  
+    <!--  Dropdown Script  -->
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
+  });
+  </script>
 </body>
+
 </html>

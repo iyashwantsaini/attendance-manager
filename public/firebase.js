@@ -14,4 +14,13 @@
  
  firebase.initializeApp(firebaseConfig);
   
+  // get elelments
+  const preObject = document.getElementById('object');
+
+  const dbRefObject = firebase.database().ref().child('object');
+  
+  
+  
+  
+  
 }());

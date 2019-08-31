@@ -15,15 +15,14 @@ studloginsub.addEventListener('click', (e) => {
   var pass=studpass.value;
   var auth=firebase.auth();
   
-  auth.signInWithEmailAndPassword(email,pass).catch(function(error) {
+  auth.signInWithEmailAndPassword(email,pass).then(cred => {
+    console.log(cred.user);
+  }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
   console.log(errorMessage);
-  })
-  .then(cred => {
-    console.log(cred.user);
   });
   
   auth.onAuthStateChanged(function(user) {
