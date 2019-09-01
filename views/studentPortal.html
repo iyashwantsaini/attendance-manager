@@ -301,19 +301,27 @@
                 });
                 mm = k[0];
                 // console.log(mm[Object.keys(mm)[0]].batch);
-                document.getElementById("studList").style.display = "block";
+                // document.getElementById("studList").style.display = "block";
                 var i = 0;
-                while (mm[Object.keys(mm)[i]] != null && mm[Object.keys(mm)[i]]["batch"] == batch) {
-                    $("#subName_"+i).
-                    // content = '<tr>';
-                    // content += '<td>' + Object.keys(mm)[i] + '</td>'; //column1
-                    // content += '<td>' + mm[Object.keys(mm)[i]]["first"] + '</td>'; //column2
-                    // content += '<td>' + mm[Object.keys(mm)[i]]["last"] + '</td>';
-                    // content += '<td>' + mm[Object.keys(mm)[i]]["year"] + '</td>';
-                    // content += '</tr>';
+                while (mm[Object.keys(mm)[i]] != null) {
+                    var pcount=0;
+                    var acount=0;
+                    $("#subName_"+i).text(Object.keys(mm)[i]);
+                    
+                    var zz = mm[Object.keys(mm)[i]]
+                    var j = 0;
+                    while (zz[Object.keys(zz)[j]] != null){
+                      if(zz[Object.keys(zz)[j]] == "P")
+                        pcount++;
+                      if(zz[Object.keys(zz)[j]] == "A")
+                        acount++;
+                      
+                      j++;
+                    }
+                    $("#classesAttended_"+i).text(pcount);
+                    $("#totalClasses_"+i).text(pcount+acount);
                     i++;
                     //console.log(content);
-                    $("#studList").append(content);
                 }
             });
   </script>
