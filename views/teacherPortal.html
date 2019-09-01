@@ -90,9 +90,7 @@
         <nav>
                 <div class="nav-wrapper">
                         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                  
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    
                     <li><a class="waves-effect tablinks" onclick="openCity(event, 'myClasses')">My Classes</a></li>
         <li><a class="waves-effect tablinks" onclick="openCity(event, 'takeAttendance')">Take Attendance</a></li>
 `
@@ -151,7 +149,7 @@
     </div>
     <div id="takeAttendance" class="tabcontent">
         <h3 class="center">Take Attendance</h3>
-        <div class="container">
+        <div class="container" id="mat1">
           <center>
                 <table id="demo"></table>
         
@@ -169,7 +167,7 @@
                                 document.getElementById("demo").innerHTML = "";
         
                                 clearInterval(t);
-        
+                                document.getElementById("mat1").innerHTML = "";
                             }
                             console.log(newDate);
                             n++;
