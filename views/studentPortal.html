@@ -259,10 +259,10 @@
     
     // var key = getKey();
     
-    function logOut(){
-      firebase.auth().signOut();
-      window.open="./landing";
-    }
+    // function logOut(){
+    //   firebase.auth().signOut();
+    //   window.open="./landing";
+    // }
     function checkKey(){
       
       var today = new Date();
@@ -271,16 +271,15 @@
       var yy = today.getFullYear().toString().split('0')[1];;
 
       today = dd + '-' + mm + '-' + yy;
-      
       var key1=document.querySelector('#key_1').value;
       var key2=document.querySelector('#key_2').value;
-      console.log(key1+key2);
+      
           if(parseInt(key1) + parseInt(key2) == key*2){
             console.log("true");
             //save to db
             var database = firebase.database();
-              database.ref('attendance/COE1/101803318/math/').push({
-              today:"P"
+              firebase.database().ref('attendance/COE1/101803318/math/').push({
+              "HELO":"P"
             });
           }
         else{
