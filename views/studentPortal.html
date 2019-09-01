@@ -161,7 +161,7 @@
             </div>
             <div class="divider"></div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <div class="col s12 center "><strong>Please Mark Your Attendancease</strong>
+            <div class="col s12 center "><strong>Please Mark Your Attendance</strong>
                 <div class="container">
                     <table>
                         <thead>
@@ -175,7 +175,7 @@
                         <tbody>
                             <tr>
                                 <td>UTA007</td>
-                                <td>Mr. Ankush Phatania</td>
+                                <td>Mr. Shakti Singh</td>
                                 <td>
                                   <form class="col s12">
                                     <div class="row">
@@ -270,7 +270,7 @@
       var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
       var yy = today.getFullYear().toString().split('0')[1];;
 
-      today = dd + '-' + mm + '-' + yy;
+      var date = dd + '-' + mm + '-' + yy;
       var key1=document.querySelector('#key_1').value;
       var key2=document.querySelector('#key_2').value;
       
@@ -278,8 +278,8 @@
             console.log("true");
             //save to db
             var database = firebase.database();
-              firebase.database().ref('attendance/COE1/101803318/math/').push({
-              "HELO":"P"
+              firebase.database().ref('attendance/COE1/101803318/phy/').push({
+              date:"P"
             });
           }
         else{

@@ -1,89 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
 
-	<!DOCTYPE HTML>
-	<html> 
-		<head>
-			<title>Attendance PORTAL</title>
-			<!-- semantic cdn -->
-			<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-	<script src="semantic/dist/semantic.min.js"></script>
-			<script type="text/javascript">  import { timer} from './models/timer.js';</script> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-database.js"></script>
+    <style>
+        input[type="file"] {
+            display: none;
+        }
 
-			<!-- matrix -->
-			 <script type="text/javascript"> 
-         var arr2 = new Array(10);
-         for (var i = 0; i < arr2.length; i++) { 
-    arr2[i] = new Array(10); 
-}
-        
-      
-         
-         
-					 var t = function() {  
-					  var table = document.getElementById("demo"); 
-				  for( var i = 0; i < 10; i++ ){ 
-						var row = document.createElement("tr"); 
-				  for( var j = 0; j < 10; j++ ){  
+        header,
+        main,
+        footer,
+        .container {
+            padding-left: 0px;
+        }
 
-							  var col = document.createElement("td");  
-            arr2[i][j] = (i*10)+j + 1; 
-						  col.innerHTML = (i*10)+j + 1; // assigning value to the cell
-            col.style.fontSize="50px";
-						row.appendChild(col);  
-						 }  
-						 table.appendChild(row);
-						}
-					 }; 
-					 window.onload=t;
-			
-					 </script>
-       <style>
-table, td, th {
-  border: 1px solid black;
-}
+        .myclass {
+            display:none;
+        }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
 
-th {
-  height: 50px;
-}
-</style> 
-		
-					  
-		</head>
-    	<body>
-      <center>
-			<table id="demo"></table>
-      
-			<script>var n=1;
-			function timer(){
-			var date=new Date();
-			console.log(date);
+        .custom-inp {
+            color: #fff !important;
+            transition: 0.25s;
+        }
 
-			var seconds=date.getSeconds();
-				console.log(seconds);
-	 		var t=setInterval(function(){
-			var newDate=new Date().getSeconds();
-			if(newDate-seconds>5){
-			clearInterval(t);
-			document.getElementById("demo").innerHTML="";
-			
-				clearInterval(t);
+        .custom-inp:hover {
+            transition: 0.05s;
+        }
 
+    </style>
+    <script type="text/javascript">
+		var arr1 = new Array(10);
+		for (var i = 0; i < arr1.length; i++) {
+			arr1[i] = new Array(10);
 		}
-		console.log(newDate);
-		n++;
 
-	}
-	,1000);
 
-	};
-	timer();
+
+
+		var t = function () {
+			var table = document.getElementById("demo");
+			for (var i = 0; i < 10; i++) {
+				var row = document.createElement("tr");
+				for (var j = 0; j < 10; j++) {
+
+					var col = document.createElement("td");
+					arr1[i][j] = (i * 10) + j + 1;
+					col.innerHTML = (i * 10) + j + 1; // assigning value to the cell
+					col.style.fontSize = "50px";
+					row.appendChild(col);
+				}
+				table.appendChild(row);
+			}
+		};
+		window.onload = t;
+
 	</script>
-      <h4>
+	<style>
+		table,
+		td,
+		th {
+			border: 1px solid black;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th {
+			height: 50px;
+		}
+	</style>
+
+</head>
+
+<body>
+        <nav>
+                <div class="nav-wrapper">
+                        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="waves-effect tablinks" onclick="openCity(event, 'myClasses')">My Classes</a></li>
+        <li><a class="waves-effect tablinks" onclick="openCity(event, 'takeAttendance')">Take Attendance</a></li>
+`
+                    <li> <a href="/"> <i style="padding:10px;" class="material-icons right">logout</i></a></li>
+                  </ul>
+                </div>
+              </nav>
+    <!-- <nav> 
+       
+    </nav> -->
+
+    <ul id="slide-out" class="sidenav ">
+        <li>
+            <div class="">
+                <a href="#name"><span class="white-text name">ADMIN</span></a>
+                <a href="#email"><span class="white-text email">ADMIN@thapar.edu</span></a>
+            </div>
+        </li>
+
+        <div class="divider"></div>
+
+        <li><a class="waves-effect tablinks" onclick="openCity(event, 'myClasses')">My Classes</a></li>
+        <li><a class="waves-effect tablinks" onclick="openCity(event, 'takeAttendance')">Take Attendance</a></li>
+        <li> <a href="/"> <i style="padding:10px;" class="material-icons right">logout</i>Logout</a></li>
+    </ul>
+
+    <!-- Tab content -->
+    <div id="myClasses" class="tabcontent myclass">
+        <h3 class="center">My Classes</h3>
+        <div class="container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>TIME</th>
+                            <th>SUBJECT</th>
+                            <th>BATCH</th>
+                            <th>LOCATION</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>8-9</td>
+                            <td>UTA007</td>
+                            <td>J4</td>
+                            <td>LT103</td>
+                               
+                          
+                        </tr>
+                    </tbody>
+                </table>
+              
+            </div>
+    </div>
+    <div id="takeAttendance" class="tabcontent">
+        <h3 class="center">Take Attendance</h3>
+        <div class="container" id="mat1">
+          <center>
+                <table id="demo"></table>
+        
+                <script>var n = 1;
+                    function timer() {
+                        var date = new Date();
+                        console.log(date);
+        
+                        var seconds = date.getSeconds();
+                        console.log(seconds);
+                        var t = setInterval(function () {
+                            var newDate = new Date().getSeconds();
+                            if (newDate - seconds > 5) {
+                                clearInterval(t);
+                                document.getElementById("demo").innerHTML = "";
+        
+                                clearInterval(t);
+                                
+                            }
+                            console.log(newDate);
+                            n++;
+        
+                        }
+                            , 1000);
+        
+                    };
+                    timer();
+                </script>
+           <h4>
         Only thoose request will be accepted thoose who have entered wrong entries.
         </h4>
 <h1>
@@ -97,4 +192,69 @@ th {
 
 		</body>     
 	</html>
+        
+            </center>
+      </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        var instances;
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            instances = M.Sidenav.init(elems, {});
+
+        });
+    </script>
+
+    <!--  Tabs script  -->
+    <script>
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+    <!--  Dropdown Script  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, {});
+        });
+    </script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBBgyIY1ru34Ij6KO_-RVTICcEsTzJ8yuU",
+            authDomain: "attenman.firebaseapp.com",
+            databaseURL: "https://attenman.firebaseio.com",
+            projectId: "attenman",
+            storageBucket: "",
+            messagingSenderId: "1035758949707",
+            appId: "1:1035758949707:web:4779f27dd6c1a12e"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</body>
+
+</html>
+      
 
