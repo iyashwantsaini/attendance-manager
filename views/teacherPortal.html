@@ -26,7 +26,7 @@
         }
 
         .tabcontent {
-            display: none;
+            
         }
 
 
@@ -53,38 +53,65 @@
             }
         }
     </style>
-    <style>
-            table,
-            td,
-            th {
-                border: 1px solid black;
-            }
+    <script type="text/javascript">
+		var arr1 = new Array(10);
+		for (var i = 0; i < arr1.length; i++) {
+			arr1[i] = new Array(10);
+		}
 
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
 
-            th {
-                height: 50px;
-            }
-        </style>
+
+
+		var t = function () {
+			var table = document.getElementById("demo");
+			for (var i = 0; i < 10; i++) {
+				var row = document.createElement("tr");
+				for (var j = 0; j < 10; j++) {
+
+					var col = document.createElement("td");
+					arr1[i][j] = (i * 10) + j + 1;
+					col.innerHTML = (i * 10) + j + 1; // assigning value to the cell
+					col.style.fontSize = "50px";
+					row.appendChild(col);
+				}
+				table.appendChild(row);
+			}
+		};
+		window.onload = t;
+
+	</script>
+	<style>
+		table,
+		td,
+		th {
+			border: 1px solid black;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th {
+			height: 50px;
+		}
+	</style>
 
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-                <li> <a> <i style="padding:10px;" class="material-icons right">logout</i></a></li>
-            </ul>
-        </div>
-    </nav>
+        <nav>
+                <div class="nav-wrapper">
+                        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>
+                    <li> <a> <i style="padding:10px;" class="material-icons right">logout</i></a></li>
+                  </ul>
+                </div>
+              </nav>
     <!-- <nav> 
        
     </nav> -->
@@ -108,82 +135,42 @@
     <div id="myClasses" class="tabcontent">
         <h3 class="center">My Classes</h3>
         <div class="container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Sr.No</th>
-                        <th>TIME</th>
-                        <th>SUBJECT</th>
-                        <th>BATCH</th>
-                        <th>LOCATION</th>
-                    </tr>
-                </thead>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>TIME</th>
+                            <th>SUBJECT</th>
+                            <th>BATCH</th>
+                            <th>LOCATION</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>8-9</td>
-                        <td>UTA007</td>
-                        <td>J4</td>
-                        <td>LT103</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>9-10</td>
-                        <td>UTA018</td>
-                        <td>J4</td>
-                        <td>LT103</td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>8-9</td>
+                            <td>UTA007</td>
+                            <td>J4</td>
+                            <td>LT103</td>
+                               
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              
+            </div>
     </div>
     <div id="takeAttendance" class="tabcontent">
         <h3 class="center">Take Attendance</h3>
-        <!-- ? -->
-        <!-- matrix -->
-        <script type="text/javascript">
-            var arr1 = new Array(10);
-            for (var i = 0; i < arr1.length; i++) {
-                arr1[i] = new Array(10);
-            }
-
-
-
-
-            var t = function () {
-                var table = document.getElementById("demo");
-                for (var i = 0; i < 10; i++) {
-                    var row = document.createElement("tr");
-                    for (var j = 0; j < 10; j++) {
-
-                        var col = document.createElement("td");
-                        arr1[i][j] = (i * 10) + j + 1;
-                        col.innerHTML = (i * 10) + j + 1; // assigning value to the cell
-                        col.style.fontSize = "50px";
-                        row.appendChild(col);
-                    }
-                    table.appendChild(row);
-                }
-            };
-            window.onload = t;
-
-        </script>
-        
-
-
-        </head>
-
-        
-            <center>
+        <center>
                 <table id="demo"></table>
-
+        
                 <script>var n = 1;
                     function timer() {
                         var date = new Date();
                         console.log(date);
-
+        
                         var seconds = date.getSeconds();
                         console.log(seconds);
                         var t = setInterval(function () {
@@ -191,16 +178,16 @@
                             if (newDate - seconds > 5) {
                                 clearInterval(t);
                                 document.getElementById("demo").innerHTML = "";
-
+        
                                 clearInterval(t);
-
+        
                             }
                             console.log(newDate);
                             n++;
-
+        
                         }
                             , 1000);
-
+        
                     };
                     timer();
                 </script>
@@ -208,11 +195,9 @@
                 <h4>
                     Only thoose request will be accepted thoose who have entered wrong entries.
                 </h4>
-
+        
             </center>
-
-
-            <!--  -->
+        
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
@@ -270,8 +255,6 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-
-    <script src="./admin.js"></script>
 </body>
 
 </html>
