@@ -104,7 +104,7 @@
                                         id="totalClasses_1" class="totalClasses">20</span>
                                 </div>
                                 <div class="col s3">
-                                    25%
+                                    <span id="per_1">25%</span>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                         id="totalClasses_2" class="totalClasses">19</span>
                                 </div>
                                 <div class="col s3">
-                                    89%
+                                  <span id="per_2">89%</span>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                                         id="totalClasses_3" class="totalClasses">11</span>
                                 </div>
                                 <div class="col s3">
-                                    89%
+                                  <span id="per_3">77%</span>
                                 </div>
                             </div>
                         </div>
@@ -306,7 +306,7 @@
                 while (mm[Object.keys(mm)[i]] != null) {
                     var pcount=0;
                     var acount=0;
-                    $("#subName_"+i).text(Object.keys(mm)[i]);
+                    $("#subName_"+(i+1)).text(Object.keys(mm)[i]);
                     
                     var zz = mm[Object.keys(mm)[i]]
                     var j = 0;
@@ -318,8 +318,10 @@
                       
                       j++;
                     }
-                    $("#classesAttended_"+i).text(pcount);
-                    $("#totalClasses_"+i).text(pcount+acount);
+                    $("#classesAttended_"+(i+1)).text(pcount);
+                    $("#totalClasses_"+(i+1)).text(pcount+acount);
+                    $("#totalClasses_"+(i+1)).text(pcount+acount);
+                    $("#per_"+(i+1)).text(Math.round((pcount/(pcount+acount)*100))+"%");
                     i++;
                     //console.log(content);
                 }
