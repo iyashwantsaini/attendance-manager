@@ -289,7 +289,34 @@
     }
       
 </script>
-
+<!-- View Attendance Firebase -->
+  <script>
+            var ref = firebase.database().ref('/attendance/COE1/');
+            var k = [];
+            var mm;
+            var content = '';
+            ref.on('value', function (snapshot) {
+                snapshot.forEach(function (data) {
+                    k.push(data.val())
+                });
+                mm = k[0];
+                // console.log(mm[Object.keys(mm)[0]].batch);
+                document.getElementById("studList").style.display = "block";
+                var i = 0;
+                while (mm[Object.keys(mm)[i]] != null && mm[Object.keys(mm)[i]]["batch"] == batch) {
+                    $("#subName_"+i).
+                    // content = '<tr>';
+                    // content += '<td>' + Object.keys(mm)[i] + '</td>'; //column1
+                    // content += '<td>' + mm[Object.keys(mm)[i]]["first"] + '</td>'; //column2
+                    // content += '<td>' + mm[Object.keys(mm)[i]]["last"] + '</td>';
+                    // content += '<td>' + mm[Object.keys(mm)[i]]["year"] + '</td>';
+                    // content += '</tr>';
+                    i++;
+                    //console.log(content);
+                    $("#studList").append(content);
+                }
+            });
+  </script>
 </body>
 
 </html>
