@@ -264,14 +264,28 @@
       window.open="./landing";
     }
     function checkKey(){
+      
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yy = today.getFullYear().toString().split('0')[1];;
+
+      today = dd + '-' + mm + '-' + yy;
+      
       var key1=document.querySelector('#key_1').value;
       var key2=document.querySelector('#key_2').value;
       console.log(key1+key2);
           if(parseInt(key1) + parseInt(key2) == key*2){
-            console.log("true")
+            console.log("true");
+            //save to db
+            var database = firebase.database();
+              database.ref('attendance/COE1/101803318/math/').push({
+              today:"P"
+            });
           }
         else{
           console.log("false");
+          alert("Wrong Key !");
         }
     }
       
