@@ -12,6 +12,10 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-database.js"></script>
     <style>
         .container {
             display: flex;
@@ -72,7 +76,7 @@
                 <li><a href="#" class="tablinks" onclick="openCity(event, 'markAttendance')">Mark Attendance</a></li>
                 <li><a href="#" class="tablinks" onclick="openCity(event, 'viewAttendance')">View Attendance</a></li>
                 <li>&nbsp;Hi {Username} ! &nbsp; &nbsp;</li>
-                <li><a href="#"><i class="material-icons">logout</i></a></li>
+                <li><a href="#" onClick="signOut()"><i class="material-icons">logout</i></a></li>
             </ul>
         </div>
     </nav>
@@ -228,6 +232,28 @@
             evt.currentTarget.className += " active";
         }
     </script>
+  
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBBgyIY1ru34Ij6KO_-RVTICcEsTzJ8yuU",
+    authDomain: "attenman.firebaseapp.com",
+    databaseURL: "https://attenman.firebaseio.com",
+    projectId: "attenman",
+    storageBucket: "",
+    messagingSenderId: "1035758949707",
+    appId: "1:1035758949707:web:4779f27dd6c1a12e"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+    
+    var key = (firebase.auth().currentUser.email.split('@')[0])%100;
+    
+    function logOut(){
+      firebase.auth().signOut();
+    }
+</script>
 
 </body>
 
