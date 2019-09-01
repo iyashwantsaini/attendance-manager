@@ -16,6 +16,7 @@
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-database.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         .container {
             display: flex;
@@ -187,7 +188,7 @@
                                         <label for="key_2">Second Key</label>
                                       </div>
                                     </div>
-                                    <button id="submit1" class="btn waves-effect waves-light right" type="submit" name="action">Submit
+                                    <button id="submit1" onclick="checkKey()" class="btn waves-effect waves-light right" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
         
@@ -262,15 +263,18 @@
       firebase.auth().signOut();
       window.open="./landing";
     }
-    var key1=document.querySelector('#key_1').value;
+    function checkKey(){
+      var key1=document.querySelector('#key_1').value;
       var key2=document.querySelector('#key_2').value;
-      var submit2=document.querySelector("#submit1");
-    submit2.addEventListener('submit', (e) => {
-        e.preventDefaults();
-        if(key1.parseInt()+key2.parseInt()==key*2){
-          console.log("true")
+      console.log(key1+key2);
+          if(parseInt(key1) + parseInt(key2) == key*2){
+            console.log("true")
+          }
+        else{
+          console.log("false");
         }
-      });
+    }
+      
 </script>
 
 </body>
