@@ -76,7 +76,7 @@
                 <li><a href="#" class="tablinks" onclick="openCity(event, 'markAttendance')">Mark Attendance</a></li>
                 <li><a href="#" class="tablinks" onclick="openCity(event, 'viewAttendance')">View Attendance</a></li>
                 <li>&nbsp;Hi {Username} ! &nbsp; &nbsp;</li>
-                <li><a href="#" onClick="signOut()"><i class="material-icons">logout</i></a></li>
+                <li><a href="#" onclick="logOut()"><i class="material-icons">logout</i></a></li>
             </ul>
         </div>
     </nav>
@@ -85,7 +85,7 @@
         <li> &nbsp;&nbsp;Hi, {Username} !</li>
         <li><a href="#" class="tablinks" onclick="openCity(event, 'markAttendance')">Mark Attendance</a></li>
         <li><a href="#" class="tablinks" onclick="openCity(event, 'viewAttendance')">View Attendance</a></li>
-        <li><a href="#" class="tablinks">Logout</a></li>
+        <li><a href="#" class="tablinks" onclick="logOut()">Logout</a></li>
     </ul>
 
     <div class="container subContainer tabcontent" id="viewAttendance">
@@ -246,12 +246,17 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
+  var auth=firebase.auth();  
+    // async function getKey(){
+      var key = auth.currentUser.email.split('@')[0])%100;
+      // return _key;
+    // };
     
-    var key = (firebase.auth().currentUser.email.split('@')[0])%100;
+    var key = getKey();
     
     function logOut(){
       firebase.auth().signOut();
+      window.open="./landing";
     }
 </script>
 
