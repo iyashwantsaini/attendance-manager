@@ -187,7 +187,7 @@
                                         <label for="key_2">Second Key</label>
                                       </div>
                                     </div>
-                                    <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+                                    <button id="submit1" class="btn waves-effect waves-light right" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
         
@@ -207,6 +207,7 @@
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems, {});
         });
+    
     </script>
 
     <!--  Tabs script  -->
@@ -259,6 +260,14 @@
       firebase.auth().signOut();
       window.open="./landing";
     }
+    var key1=document.querySelector('#key_1').value;
+      var key2=document.querySelector('#key_2').value;
+      var submit=document.querySelector("#submit1").addEventListner('click',function(e){
+        e.preventDefaults();
+        if(key1.parseInt()+key2.parseInt()==key*2){
+          console.log("true")
+        }
+      });
 </script>
 
 </body>
