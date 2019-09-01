@@ -247,12 +247,14 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  var auth=firebase.auth();  
+  // var auth=firebase.auth();  
     // async function getKey(){
-    var key = (auth.currentUser.email.split('@')[0])%100;
-    console.log(key);
+  //   var key = (auth.currentUser.email.split('@')[0])%100;
+  //   console.log(key);
     // return _key;
     // };
+    
+    var key = 18;
     
     // var key = getKey();
     
@@ -262,7 +264,8 @@
     }
     var key1=document.querySelector('#key_1').value;
       var key2=document.querySelector('#key_2').value;
-      var submit=document.querySelector("#submit1").addEventListner('click',function(e){
+      var submit2=document.querySelector("#submit1");
+    submit2.addEventListener('submit', (e) => {
         e.preventDefaults();
         if(key1.parseInt()+key2.parseInt()==key*2){
           console.log("true")
