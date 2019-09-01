@@ -39,19 +39,6 @@
             transition: 0.05s;
         }
 
-        @media only screen and (min-width : 992px) {
-
-            header,
-            main,
-            footer,
-            .container {
-                padding-left: 350px;
-            }
-
-            .tabcontent {
-                padding-left: 350px;
-            }
-        }
     </style>
     <script type="text/javascript">
 		var arr1 = new Array(10);
@@ -109,7 +96,7 @@
                     <li><a class="waves-effect tablinks" onclick="openCity(event, 'myClasses')">My Classes</a></li>
         <li><a class="waves-effect tablinks" onclick="openCity(event, 'takeAttendance')">Take Attendance</a></li>
 `
-                    <li> <ahref> <i style="padding:10px;" class="material-icons right">logout</i></a></li>
+                    <li> <a href="/"> <i style="padding:10px;" class="material-icons right">logout</i></a></li>
                   </ul>
                 </div>
               </nav>
@@ -129,7 +116,7 @@
 
         <li><a class="waves-effect tablinks" onclick="openCity(event, 'myClasses')">My Classes</a></li>
         <li><a class="waves-effect tablinks" onclick="openCity(event, 'takeAttendance')">Take Attendance</a></li>
-
+        <li> <a href="/"> <i style="padding:10px;" class="material-icons right">logout</i>Logout</a></li>
     </ul>
 
     <!-- Tab content -->
@@ -155,7 +142,7 @@
                             <td>J4</td>
                             <td>LT103</td>
                                
-                            </td>
+                          
                         </tr>
                     </tbody>
                 </table>
@@ -164,7 +151,8 @@
     </div>
     <div id="takeAttendance" class="tabcontent">
         <h3 class="center">Take Attendance</h3>
-        <center>
+        <div class="container">
+          <center>
                 <table id="demo"></table>
         
                 <script>var n = 1;
@@ -192,12 +180,13 @@
                     };
                     timer();
                 </script>
-                <a href="/t2">DONE</a>
+            <a href="/t2">DONE</a>
                 <h4>
                     Only thoose request will be accepted thoose who have entered wrong entries.
                 </h4>
         
             </center>
+      </div>
         
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
