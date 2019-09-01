@@ -249,7 +249,7 @@
   firebase.initializeApp(firebaseConfig);
   var auth=firebase.auth();  
     // async function getKey(){
-    var key = (auth.currentUser.split('@')[0])%100;
+    var key = (auth.currentUser.email.split('@')[0])%100;
     console.log(key);
     // return _key;
     // };
